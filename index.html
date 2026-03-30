@@ -13,67 +13,119 @@
 html,body{height:100%;overscroll-behavior:none;}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);max-width:430px;margin:0 auto;overflow-x:hidden;}
 #login{position:fixed;inset:0;z-index:999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 24px;max-width:430px;margin:0 auto;}
-.logo{font-size:40px;font-weight:700;letter-spacing:-1.5px;margin-bottom:4px;}.logo span{color:var(--accent);}
+.logo{font-size:40px;font-weight:700;letter-spacing:-1.5px;margin-bottom:4px;}
+.logo span{color:var(--accent);}
 .logo-sub{color:var(--text3);font-size:13px;margin-bottom:44px;}
 .lcard{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:26px;}
 .ltitle{font-size:17px;font-weight:600;margin-bottom:22px;text-align:center;color:var(--text2);}
 .lerr{color:var(--red);font-size:13px;text-align:center;margin-top:10px;display:none;}
-.fi{margin-bottom:14px;}.fl{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px;display:block;}
+.fi{margin-bottom:14px;}
+.fl{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px;display:block;}
 input,select,textarea{width:100%;background:var(--bg3);border:1.5px solid var(--border);border-radius:var(--rs);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;padding:13px 14px;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none;}
 input:focus,select:focus,textarea:focus{border-color:var(--accent);}
 textarea{resize:vertical;min-height:70px;font-size:15px;}
-.fr{display:flex;gap:10px;}.fr .fi{flex:1;}
+.fr{display:flex;gap:10px;}
+.fr .fi{flex:1;}
 .btn{width:100%;border:none;border-radius:var(--rs);padding:15px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .15s;margin-top:6px;}
-.btn:active{opacity:.8;}.btn-p{background:var(--accent);color:#fff;}.btn-g{background:var(--bg3);color:var(--text2);border:1px solid var(--border);}.btn-d{background:rgba(255,92,92,.15);color:var(--red);border:1px solid rgba(255,92,92,.3);}
-.btn-sm{background:var(--accent);color:#fff;border:none;border-radius:var(--rs);padding:11px 16px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;}
+.btn:active{opacity:.8;}
+.btn-p{background:var(--accent);color:#fff;}
+.btn-g{background:var(--bg3);color:var(--text2);border:1px solid var(--border);}
+.btn-d{background:rgba(255,92,92,.15);color:var(--red);border:1px solid rgba(255,92,92,.3);}
+.btn-sm{background:var(--accent);color:#fff;border:none;border-radius:var(--rs);padding:11px 16px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;width:100%;margin-top:8px;}
 .icon-btn{background:var(--accent);border:none;color:#fff;width:38px;height:38px;border-radius:50%;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;line-height:1;}
-#app{display:none;min-height:100vh;}#app.on{display:block;}
+#app{display:none;min-height:100vh;}
+#app.on{display:block;}
 .nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(15,17,23,.96);backdrop-filter:blur(24px);border-top:1px solid var(--border);display:flex;padding:10px 0 calc(10px + var(--sb));z-index:100;}
 .nb{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;color:var(--text3);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;transition:color .2s;padding:4px 0;}
-.nb.on{color:var(--accent);}.nb svg{width:22px;height:22px;}
-.pg{display:none;padding-bottom:calc(80px + var(--sb));min-height:100vh;}.pg.on{display:block;}
+.nb.on{color:var(--accent);}
+.nb svg{width:22px;height:22px;}
+.pg{display:none;padding-bottom:calc(80px + var(--sb));min-height:100vh;}
+.pg.on{display:block;}
 .hd{padding:calc(var(--st) + 54px) 20px 14px;background:linear-gradient(180deg,var(--bg2) 0%,transparent 100%);position:sticky;top:0;z-index:50;backdrop-filter:blur(20px);}
-.hd h1{font-size:28px;font-weight:700;letter-spacing:-.5px;}.hd p{color:var(--text2);font-size:13px;margin-top:2px;}
+.hd h1{font-size:28px;font-weight:700;letter-spacing:-.5px;}
+.hd p{color:var(--text2);font-size:13px;margin-top:2px;}
 .hdr{display:flex;justify-content:space-between;align-items:flex-end;gap:8px;}
 .ubadge{display:flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0;}
 .stitle{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin:20px 0 10px;}
 .card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:10px;position:relative;overflow:hidden;cursor:pointer;transition:transform .15s,border-color .15s;}
-.card:active{transform:scale(.98);border-color:var(--accent);}.cacc{position:absolute;left:0;top:0;bottom:0;width:3px;}
+.card:active{transform:scale(.98);border-color:var(--accent);}
+.cacc{position:absolute;left:0;top:0;bottom:0;width:3px;}
 .badge{font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;white-space:nowrap;}
-.ba{background:rgba(34,201,122,.1);color:var(--amperus);}.bw{background:rgba(255,92,92,.1);color:var(--waat);}.bd{background:rgba(255,255,255,.06);color:var(--text2);}.bm{background:rgba(124,92,252,.15);color:var(--purple);}
-.camts{display:flex;gap:8px;}.ab{flex:1;background:var(--bg3);border-radius:var(--rs);padding:8px 10px;}.al{font-size:10px;color:var(--text3);margin-bottom:2px;}.av{font-size:14px;font-weight:600;font-family:'DM Mono',monospace;}.av.g{color:var(--green);}.av.r{color:var(--red);}
-.krow{display:flex;gap:10px;margin-bottom:8px;}.kcard{flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:14px 12px;}.kl{font-size:10px;color:var(--text3);margin-bottom:4px;font-weight:500;}.kv{font-size:18px;font-weight:700;font-family:'DM Mono',monospace;}.kv.a{color:var(--accent);}.kv.g{color:var(--green);}.kv.o{color:var(--orange);}
-.cw{margin-bottom:6px;}.cwl{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin:18px 0 10px;}
+.ba{background:rgba(34,201,122,.1);color:var(--amperus);}
+.bw{background:rgba(255,92,92,.1);color:var(--waat);}
+.bd{background:rgba(255,255,255,.06);color:var(--text2);}
+.bm{background:rgba(124,92,252,.15);color:var(--purple);}
+.camts{display:flex;gap:8px;}
+.ab{flex:1;background:var(--bg3);border-radius:var(--rs);padding:8px 10px;}
+.al{font-size:10px;color:var(--text3);margin-bottom:2px;}
+.av{font-size:14px;font-weight:600;font-family:'DM Mono',monospace;}
+.av.g{color:var(--green);}
+.av.r{color:var(--red);}
+.krow{display:flex;gap:10px;margin-bottom:8px;}
+.kcard{flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:14px 12px;}
+.kl{font-size:10px;color:var(--text3);margin-bottom:4px;font-weight:500;}
+.kv{font-size:18px;font-weight:700;font-family:'DM Mono',monospace;}
+.kv.a{color:var(--accent);}
+.kv.g{color:var(--green);}
+.kv.o{color:var(--orange);}
+.cw{margin-bottom:6px;}
+.cwl{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin:18px 0 10px;}
 .cd{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);margin-bottom:8px;overflow:hidden;}
 .cdh{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);}
-.cdn{font-size:22px;font-weight:700;font-family:'DM Mono',monospace;}.cdn.today{background:var(--accent);color:#fff;border-radius:8px;padding:2px 10px;}
-.cdname{font-size:12px;color:var(--text2);font-weight:500;flex:1;}.cde{padding:10px 14px;color:var(--text3);font-size:13px;font-style:italic;}
-.ce{padding:10px 14px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start;}.ce.clickable{cursor:pointer;}.ce.clickable:active{background:var(--bg3);}
-.cdot{width:8px;height:8px;border-radius:50%;margin-top:5px;flex-shrink:0;}.ci{flex:1;}.ctech{font-size:11px;font-weight:700;margin-bottom:2px;}.caddr{font-size:12px;color:var(--text2);line-height:1.4;}.ccli{font-size:11px;font-weight:600;margin-top:3px;}
-.absent-tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;margin-left:6px;}.absent-tag.abs{background:rgba(255,92,92,.2);color:var(--red);}.absent-tag.cng{background:rgba(255,159,67,.2);color:var(--orange);}
+.cdn{font-size:22px;font-weight:700;font-family:'DM Mono',monospace;}
+.cdn.today{background:var(--accent);color:#fff;border-radius:8px;padding:2px 10px;}
+.cdname{font-size:12px;color:var(--text2);font-weight:500;flex:1;}
+.cde{padding:10px 14px;color:var(--text3);font-size:13px;font-style:italic;}
+.ce{padding:10px 14px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start;}
+.ce.clickable{cursor:pointer;}
+.ce.clickable:active{background:var(--bg3);}
+.cdot{width:8px;height:8px;border-radius:50%;margin-top:5px;flex-shrink:0;}
+.ci{flex:1;}
+.ctech{font-size:11px;font-weight:700;margin-bottom:2px;}
+.caddr{font-size:12px;color:var(--text2);line-height:1.4;}
+.ccli{font-size:11px;font-weight:600;margin-top:3px;}
+.absent-tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;margin-left:6px;}
+.absent-tag.abs{background:rgba(255,92,92,.2);color:var(--red);}
+.absent-tag.cng{background:rgba(255,159,67,.2);color:var(--orange);}
 .dep-item{display:flex;align-items:center;gap:8px;padding:9px 12px;background:var(--bg3);border-radius:var(--rs);margin-bottom:6px;border:1px solid var(--border);}
-.dep-info{flex:1;}.dep-desc{font-size:13px;font-weight:500;}.dep-date{font-size:11px;color:var(--text3);margin-top:1px;}
+.dep-info{flex:1;}
+.dep-desc{font-size:13px;font-weight:500;}
+.dep-date{font-size:11px;color:var(--text3);margin-top:1px;}
 .dep-amt{font-size:14px;font-weight:700;font-family:'DM Mono',monospace;color:var(--orange);white-space:nowrap;}
 .dep-del{background:none;border:none;color:var(--text3);cursor:pointer;padding:4px;font-size:16px;flex-shrink:0;}
 .dep-total{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:rgba(255,159,67,.1);border:1px solid rgba(255,159,67,.25);border-radius:var(--rs);margin-top:4px;}
 .abs-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:8px;}
-.abs-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}.abs-name{font-size:15px;font-weight:700;}
-.abs-item{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px;}.abs-item:last-child{border-bottom:none;}
-.mo{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.75);backdrop-filter:blur(6px);align-items:flex-end;justify-content:center;}.mo.on{display:flex;}
+.abs-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.abs-name{font-size:15px;font-weight:700;}
+.abs-item{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.abs-item:last-child{border-bottom:none;}
+.mo{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.75);backdrop-filter:blur(6px);align-items:flex-end;justify-content:center;}
+.mo.on{display:flex;}
 .m{width:100%;max-width:430px;background:var(--bg2);border-radius:24px 24px 0 0;border-top:1px solid var(--border);max-height:94vh;overflow-y:auto;padding:20px 16px calc(24px + var(--sb));animation:su .3s cubic-bezier(.34,1.56,.64,1);}
 @keyframes su{from{transform:translateY(100%);}to{transform:translateY(0);}}
-.mh{width:36px;height:4px;background:var(--border);border-radius:2px;margin:0 auto 22px;}.mt{font-size:20px;font-weight:700;margin-bottom:18px;}
+.mh{width:36px;height:4px;background:var(--border);border-radius:2px;margin:0 auto 22px;}
+.mt{font-size:20px;font-weight:700;margin-bottom:18px;}
 .toast{position:fixed;top:calc(var(--st) + 54px);left:50%;transform:translateX(-50%);padding:10px 22px;border-radius:20px;font-size:14px;font-weight:600;z-index:400;opacity:0;transition:opacity .3s;white-space:nowrap;pointer-events:none;}
-.toast.on{opacity:1;}.toast.ok{background:var(--green);color:#fff;}.toast.err{background:var(--red);color:#fff;}
+.toast.on{opacity:1;}
+.toast.ok{background:var(--green);color:#fff;}
+.toast.err{background:var(--red);color:#fff;}
 .pad{padding:0 16px;}
 .sync-dot{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;margin-left:6px;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
 .exp-row{display:flex;gap:8px;margin-bottom:12px;}
 .exp-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:11px 10px;color:var(--text2);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;}
+.mat-item{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--bg3);border-radius:var(--rs);margin-bottom:6px;border:1px solid var(--border);}
+.mat-info{flex:1;}
+.mat-ref{font-size:12px;font-weight:600;}
+.mat-prix{font-size:11px;color:var(--text3);}
+.mat-total{font-size:13px;font-weight:700;font-family:'DM Mono',monospace;color:var(--orange);min-width:60px;text-align:right;}
+.mat-del{background:none;border:none;color:var(--text3);cursor:pointer;font-size:16px;padding:4px;}
 </style>
 </head>
 <body>
 <div class="toast" id="toast"></div>
+
+<!-- LOGIN -->
 <div id="login">
   <div class="logo">Kali<span>sma</span></div>
   <div class="logo-sub">Gestion des chantiers · Temps réel</div>
@@ -86,96 +138,364 @@ textarea{resize:vertical;min-height:70px;font-size:15px;}
   </div>
   <div style="margin-top:16px;font-size:11px;color:var(--text3);text-align:center;"><span class="sync-dot"></span> Synchronisation Firebase temps réel</div>
 </div>
+
+<!-- APP -->
 <div id="app">
   <div class="pg on" id="pg-planning">
-    <div class="hd"><div class="hdr"><div><h1>Planning</h1><p>Chantiers <span class="sync-dot"></span></p></div>
-    <div style="display:flex;gap:8px;align-items:center;">
-      <button class="icon-btn" id="btn-absence" onclick="openAbsenceModal()" style="display:none;background:var(--orange);font-size:16px;">🏖</button>
-      <div class="ubadge" onclick="doLogout()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><span id="uname">—</span></div>
-    </div></div></div>
+    <div class="hd"><div class="hdr">
+      <div><h1>Planning</h1><p>Chantiers <span class="sync-dot"></span></p></div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <button class="icon-btn" id="btn-absence" onclick="openAbsenceModal()" style="display:none;background:var(--orange);font-size:16px;">🏖</button>
+        <div class="ubadge" onclick="doLogout()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><span id="uname">—</span></div>
+      </div>
+    </div></div>
     <div id="pl-body" class="pad"></div>
   </div>
+
   <div class="pg" id="pg-chantiers">
-    <div class="hd"><div class="hdr"><div><h1>Chantiers</h1><p id="ch-count">—</p></div>
-    <div style="display:flex;gap:8px;">
-      <button class="icon-btn" id="btn-add-tech" onclick="openAddTechModal()" style="display:none;background:var(--purple);font-size:16px;">👷</button>
-      <button class="icon-btn" id="btn-add" onclick="openAddChantier()" style="display:none;">+</button>
-    </div></div></div>
-    <div id="exp-row-container" class="pad" style="display:none;"><div class="exp-row" style="margin-top:12px;">
-      <button class="exp-btn" onclick="exportCSV()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Export CSV</button>
-      <button class="exp-btn" onclick="exportICS()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Agenda ICS</button>
+    <div class="hd"><div class="hdr">
+      <div><h1>Chantiers</h1><p id="ch-count">—</p></div>
+      <div style="display:flex;gap:8px;">
+        <button class="icon-btn" id="btn-add-tech" onclick="openAddTechModal()" style="display:none;background:var(--purple);font-size:16px;">👷</button>
+        <button class="icon-btn" id="btn-add" onclick="openAddChantier()" style="display:none;">+</button>
+      </div>
     </div></div>
+    <div id="exp-row-container" class="pad" style="display:none;">
+      <div class="exp-row" style="margin-top:12px;">
+        <button class="exp-btn" onclick="exportCSV()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Export CSV</button>
+        <button class="exp-btn" onclick="exportICS()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Agenda ICS</button>
+      </div>
+    </div>
     <div id="ch-list" class="pad" style="margin-top:8px;"></div>
   </div>
+
   <div class="pg" id="pg-synthese">
     <div class="hd"><h1>Synthèse</h1><p>Vue financière & absences</p></div>
     <div id="sy-body" class="pad"></div>
   </div>
+
   <nav class="nav">
     <button class="nb on" id="nb-planning" onclick="goPage('planning',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Planning</button>
     <button class="nb" id="nb-chantiers" onclick="goPage('chantiers',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Chantiers</button>
     <button class="nb" id="nb-synthese" onclick="goPage('synthese',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Synthèse</button>
   </nav>
 </div>
+
+<!-- MODAL DETAIL -->
 <div class="mo" id="mo-detail"><div class="m"><div class="mh"></div><div id="mo-detail-body"></div></div></div>
-<div class="mo" id="mo-chantier"><div class="m"><div class="mh"></div><div class="mt" id="mo-chantier-title">Nouveau chantier</div>
-  <div class="fr"><div class="fi"><label class="fl">Client</label><select id="f-client"><option>Amperus</option><option>Waat</option><option>Interne</option></select></div>
-  <div class="fi"><label class="fl">Assigné à</label><select id="f-tech"></select></div></div>
-  <div class="fi"><label class="fl">Nature des travaux</label><select id="f-nature-sel" onchange="toggleNature()"><option>Travaux d'infra</option><option>Travaux préparatoires</option><option>Travaux préparatoires ENEDIS</option><option>Travaux préparatoires WAATCO</option><option>Finition chantier</option><option>Rendez-vous client</option><option>Rendez-vous chantier</option><option>Récupération matériel</option><option value="autre">Autre…</option></select></div>
+
+<!-- MODAL CHANTIER -->
+<div class="mo" id="mo-chantier"><div class="m"><div class="mh"></div>
+  <div class="mt" id="mo-chantier-title">Nouveau chantier</div>
+  <div class="fr">
+    <div class="fi"><label class="fl">Client</label><select id="f-client"><option>Amperus</option><option>Waat</option><option>Interne</option></select></div>
+    <div class="fi"><label class="fl">Assigné à</label><select id="f-tech"></select></div>
+  </div>
+  <div class="fi"><label class="fl">Nature des travaux</label>
+    <select id="f-nature-sel" onchange="toggleNature()">
+      <option>Travaux d'infra</option><option>Travaux préparatoires</option>
+      <option>Travaux préparatoires ENEDIS</option><option>Travaux préparatoires WAATCO</option>
+      <option>Finition chantier</option><option>Rendez-vous client</option>
+      <option>Rendez-vous chantier</option><option>Récupération matériel</option>
+      <option value="autre">Autre…</option>
+    </select>
+  </div>
   <div class="fi" id="f-nature-other" style="display:none;"><label class="fl">Préciser</label><input id="f-nature-text" type="text" placeholder="Décrivez les travaux…"></div>
   <div class="fi"><label class="fl">Adresse / Site</label><input id="f-adresse" type="text" placeholder="10 rue Maria, 75001 Paris"></div>
-  <div class="fr"><div class="fi"><label class="fl">Début</label><input id="f-debut" type="date"></div><div class="fi"><label class="fl">Fin</label><input id="f-fin" type="date"></div></div>
-  <div class="fi"><label class="fl">Demi-journée</label><select id="f-demi"><option value="">Journée entière</option><option value="matin">Matin</option><option value="après-midi">Après-midi</option></select></div>
-  <div class="fr"><div class="fi"><label class="fl">Facturé HT (€)</label><input id="f-facture" type="number" placeholder="0" step="0.01" inputmode="decimal"></div><div class="fi"><label class="fl">Heures MO</label><input id="f-heures" type="number" placeholder="8" step="0.5" inputmode="decimal"></div></div>
-  <div class="fi"><label class="fl">Matériel (€)</label><input id="f-materiel" type="number" placeholder="0" step="0.01" inputmode="decimal"></div>
+  <div class="fr">
+    <div class="fi"><label class="fl">Début</label><input id="f-debut" type="date"></div>
+    <div class="fi"><label class="fl">Fin</label><input id="f-fin" type="date"></div>
+  </div>
+  <div class="fi"><label class="fl">Demi-journée</label>
+    <select id="f-demi"><option value="">Journée entière</option><option value="matin">Matin</option><option value="après-midi">Après-midi</option></select>
+  </div>
+  <div class="fr">
+    <div class="fi"><label class="fl">Facturé HT (€)</label><input id="f-facture" type="number" placeholder="0" step="0.01" inputmode="decimal"></div>
+    <div class="fi"><label class="fl">Heures MO</label><input id="f-heures" type="number" placeholder="8" step="0.5" inputmode="decimal"></div>
+  </div>
+  <div class="stitle">👤 Contact & accès</div>
+  <div class="fr">
+    <div class="fi"><label class="fl">Chargé d'affaires client</label><input id="f-charge" type="text" placeholder="Ex: M. Dupont"></div>
+    <div class="fi"><label class="fl">Tél.</label><input id="f-charge-tel" type="tel" placeholder="06…"></div>
+  </div>
+  <div class="fr">
+    <div class="fi"><label class="fl">Contact sur site</label><input id="f-contact" type="text" placeholder="Ex: Gardien"></div>
+    <div class="fi"><label class="fl">Tél.</label><input id="f-contact-tel" type="tel" placeholder="06…"></div>
+  </div>
+  <div class="fi"><label class="fl">Instructions d'accès</label><textarea id="f-acces" placeholder="Digicode, badge, instructions…"></textarea></div>
   <button class="btn btn-p" onclick="saveChantier()">Enregistrer</button>
   <button class="btn btn-g" onclick="closeModal('mo-chantier')">Annuler</button>
 </div></div>
-<div class="mo" id="mo-absence"><div class="m"><div class="mh"></div><div class="mt">Gérer une absence</div>
+
+<!-- MODAL ABSENCE -->
+<div class="mo" id="mo-absence"><div class="m"><div class="mh"></div>
+  <div class="mt">Gérer une absence</div>
   <div class="fi"><label class="fl">Technicien</label><select id="abs-tech"></select></div>
-  <div class="fi"><label class="fl">Type</label><select id="abs-type"><option value="absent">Absent (maladie / imprévu)</option><option value="conge">Congé</option></select></div>
-  <div class="fr"><div class="fi"><label class="fl">Début</label><input id="abs-debut" type="date"></div><div class="fi"><label class="fl">Fin</label><input id="abs-fin" type="date"></div></div>
-  <div class="fi"><label class="fl">Note (optionnel)</label><input id="abs-note" type="text" placeholder="Ex: maladie, RTT, vacances…"></div>
+  <div class="fi"><label class="fl">Type</label>
+    <select id="abs-type"><option value="absent">Absent (maladie / imprévu)</option><option value="conge">Congé</option></select>
+  </div>
+  <div class="fr">
+    <div class="fi"><label class="fl">Début</label><input id="abs-debut" type="date"></div>
+    <div class="fi"><label class="fl">Fin</label><input id="abs-fin" type="date"></div>
+  </div>
+  <div class="fi"><label class="fl">Note (optionnel)</label><input id="abs-note" type="text" placeholder="Ex: maladie, RTT…"></div>
   <button class="btn btn-p" onclick="saveAbsence()">Enregistrer</button>
   <button class="btn btn-g" onclick="closeModal('mo-absence')">Annuler</button>
 </div></div>
-<div class="mo" id="mo-add-tech"><div class="m"><div class="mh"></div><div class="mt">Ajouter un technicien</div>
+
+<!-- MODAL TECHNICIEN -->
+<div class="mo" id="mo-add-tech"><div class="m"><div class="mh"></div>
+  <div class="mt">Ajouter un technicien</div>
   <div class="fi"><label class="fl">Prénom / Nom</label><input id="new-tech-nom" type="text" placeholder="Ex: Ahmed" autocapitalize="words"></div>
   <div class="fi"><label class="fl">Taux horaire net (€/h)</label><input id="new-tech-taux" type="number" placeholder="13.20" step="0.01" inputmode="decimal"></div>
   <button class="btn btn-p" onclick="saveTechnicien()">Ajouter</button>
   <button class="btn btn-g" onclick="closeModal('mo-add-tech')">Annuler</button>
 </div></div>
+
+<!-- MODAL MATERIEL BPU -->
+<div class="mo" id="mo-materiel"><div class="m"><div class="mh"></div>
+  <div class="mt">🔧 Ajouter du matériel</div>
+  <div class="fi"><label class="fl">Famille</label>
+    <select id="bpu-famille" onchange="filterBPU()">
+      <option value="">-- Toutes les familles --</option>
+      <option>Câbles Terre JV</option><option>Câbles R2V 4x</option><option>Câbles R2V 1x</option>
+      <option>Câbles R2V 3G</option><option>Câbles R2V 5G</option><option>Câbles AR2V</option>
+      <option>Câbles CFA</option><option>Chemin de câble Cablofil</option><option>Couvercle Cablofil</option>
+      <option>Tube IRO</option><option>Gaine ICTA</option><option>Gaine IK10</option>
+      <option>Rails et supports</option><option>Fixation</option><option>Boîtes et connectique</option>
+      <option>Divers</option>
+    </select>
+  </div>
+  <div class="fi"><label class="fl">Référence</label><select id="bpu-ref" onchange="updateBPUPreview()"></select></div>
+  <div class="fi"><label class="fl">Quantité (ml ou unité)</label><input id="bpu-qty" type="number" placeholder="Ex: 10" step="0.5" inputmode="decimal" min="0" oninput="updateBPUPreview()"></div>
+  <div id="bpu-preview" style="background:var(--bg3);border-radius:var(--rs);padding:10px 12px;margin-bottom:12px;font-size:13px;color:var(--text2);display:none;"></div>
+  <button class="btn btn-p" onclick="addMateriel()">+ Ajouter ce matériel</button>
+  <button class="btn btn-g" onclick="closeModal('mo-materiel')">Fermer</button>
+</div></div>
+
 <script type="module">
 import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import{getDatabase,ref,set,push,remove,onValue,update}from"https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
 const FC={apiKey:"AIzaSyA7mDITGuOlWb5oLs-EYOdDyt30EbG1Dig",authDomain:"kalisma-prolec.firebaseapp.com",databaseURL:"https://kalisma-prolec-default-rtdb.europe-west1.firebasedatabase.app",projectId:"kalisma-prolec",storageBucket:"kalisma-prolec.firebasestorage.app",messagingSenderId:"160749414748",appId:"1:160749414748:web:1f03ad4e12551afa8c7999"};
-const app=initializeApp(FC);const db=getDatabase(app);
-const USERS={fousseni:{pass:'fousseni',role:'superadmin',nom:'Fousseni'},abdou:{pass:'abdou',role:'admin',nom:'Abdou'},fodie:{pass:'fodie',role:'admin',nom:'Fodie'},christophe:{pass:'christophe',role:'logistique',nom:'Christophe'},sekou:{pass:'sekou',role:'planning',nom:'Sékou'},kunda:{pass:'kunda',role:'technicien',nom:'KUNDA'},pape:{pass:'pape',role:'technicien',nom:'PAPE'}};
-const CAN={superadmin:{chantiers:true,finances:true,edit:true,export:true,gererTech:true,absences:true},admin:{chantiers:true,finances:true,edit:true,export:false,gererTech:true,absences:true},logistique:{chantiers:true,finances:false,edit:false,export:false,gererTech:false,absences:false},planning:{chantiers:false,finances:false,edit:false,export:false,gererTech:false,absences:false},technicien:{chantiers:false,finances:false,edit:false,export:false,gererTech:false,absences:false}};
+const app=initializeApp(FC);
+const db=getDatabase(app);
+
+// ═══════════ BPU ═══════════
+const BPU=[
+  {famille:'Câbles Terre JV',ref:'Terre JV 16',prix:2.42,unite:'ml'},
+  {famille:'Câbles Terre JV',ref:'Terre JV 25',prix:3.88,unite:'ml'},
+  {famille:'Câbles Terre JV',ref:'Terre JV 35',prix:5.44,unite:'ml'},
+  {famille:'Câbles R2V 4x',ref:'R2V 4x16',prix:10.05,unite:'ml'},
+  {famille:'Câbles R2V 4x',ref:'R2V 4x25',prix:15.87,unite:'ml'},
+  {famille:'Câbles R2V 4x',ref:'R2V 4x35',prix:21.44,unite:'ml'},
+  {famille:'Câbles R2V 4x',ref:'R2V 4x50',prix:29.72,unite:'ml'},
+  {famille:'Câbles R2V 4x',ref:'R2V 4x70',prix:42.50,unite:'ml'},
+  {famille:'Câbles R2V 4x',ref:'R2V 4x95',prix:58.72,unite:'ml'},
+  {famille:'Câbles R2V 4x',ref:'R2V 4x120',prix:101.37,unite:'ml'},
+  {famille:'Câbles R2V 1x',ref:'R2V 1x95',prix:14.11,unite:'ml'},
+  {famille:'Câbles R2V 1x',ref:'R2V 1x120',prix:17.69,unite:'ml'},
+  {famille:'Câbles R2V 1x',ref:'R2V 1x150',prix:22.00,unite:'ml'},
+  {famille:'Câbles R2V 1x',ref:'R2V 1x185',prix:27.02,unite:'ml'},
+  {famille:'Câbles R2V 1x',ref:'R2V 1x240',prix:34.80,unite:'ml'},
+  {famille:'Câbles R2V 3G',ref:'R2V 3G1.5',prix:0.78,unite:'ml'},
+  {famille:'Câbles R2V 3G',ref:'R2V 3G2.5',prix:1.22,unite:'ml'},
+  {famille:'Câbles R2V 3G',ref:'R2V 3G4',prix:2.03,unite:'ml'},
+  {famille:'Câbles R2V 3G',ref:'R2V 3G6',prix:2.93,unite:'ml'},
+  {famille:'Câbles R2V 3G',ref:'R2V 3G10',prix:4.93,unite:'ml'},
+  {famille:'Câbles R2V 3G',ref:'R2V 3G16',prix:7.73,unite:'ml'},
+  {famille:'Câbles R2V 5G',ref:'R2V 5G1.5',prix:1.25,unite:'ml'},
+  {famille:'Câbles R2V 5G',ref:'R2V 5G2.5',prix:2.04,unite:'ml'},
+  {famille:'Câbles AR2V',ref:'AR2V 4x35',prix:4.77,unite:'ml'},
+  {famille:'Câbles AR2V',ref:'AR2V 4x50',prix:6.30,unite:'ml'},
+  {famille:'Câbles AR2V',ref:'AR2V 4x70',prix:8.82,unite:'ml'},
+  {famille:'Câbles AR2V',ref:'AR2V 4x95',prix:11.38,unite:'ml'},
+  {famille:'Câbles AR2V',ref:'AR2V 4x120',prix:16.69,unite:'ml'},
+  {famille:'Câbles AR2V',ref:'AR2V 4x150',prix:19.35,unite:'ml'},
+  {famille:'Câbles AR2V',ref:'AR2V 4x185',prix:24.05,unite:'ml'},
+  {famille:'Câbles AR2V',ref:'AR2V 4x240',prix:31.36,unite:'ml'},
+  {famille:'Câbles CFA',ref:'CFA RJ45 câble',prix:0.58,unite:'ml'},
+  {famille:'Câbles CFA',ref:'CFA Fiche RJ45',prix:10.92,unite:'u'},
+  {famille:'Chemin de câble Cablofil',ref:'Cablofil 100',prix:0,unite:'ml'},
+  {famille:'Chemin de câble Cablofil',ref:'Cablofil 150',prix:4.20,unite:'ml'},
+  {famille:'Chemin de câble Cablofil',ref:'Cablofil 200',prix:3.80,unite:'ml'},
+  {famille:'Chemin de câble Cablofil',ref:'Cablofil 300',prix:6.32,unite:'ml'},
+  {famille:'Couvercle Cablofil',ref:'Couvercle 100',prix:3.58,unite:'ml'},
+  {famille:'Couvercle Cablofil',ref:'Couvercle 150',prix:4.42,unite:'ml'},
+  {famille:'Couvercle Cablofil',ref:'Couvercle 200',prix:5.25,unite:'ml'},
+  {famille:'Couvercle Cablofil',ref:'Couvercle 300',prix:6.80,unite:'ml'},
+  {famille:'Tube IRO',ref:'Tube IRO 25',prix:0.61,unite:'ml'},
+  {famille:'Tube IRO',ref:'Tube IRO 32',prix:1.07,unite:'ml'},
+  {famille:'Tube IRO',ref:'Tube IRO 40',prix:4.22,unite:'ml'},
+  {famille:'Gaine ICTA',ref:'Gaine ICTA 25',prix:0.48,unite:'ml'},
+  {famille:'Gaine ICTA',ref:'Gaine ICTA 32',prix:0.96,unite:'ml'},
+  {famille:'Gaine ICTA',ref:'Gaine ICTA 40',prix:1.99,unite:'ml'},
+  {famille:'Gaine IK10',ref:'Gaine IK10 40',prix:2.47,unite:'ml'},
+  {famille:'Gaine IK10',ref:'Gaine IK10 63',prix:5.94,unite:'ml'},
+  {famille:'Gaine IK10',ref:'Gaine IK10 90',prix:9.32,unite:'ml'},
+  {famille:'Gaine IK10',ref:'Gaine IK10 110',prix:11.57,unite:'ml'},
+  {famille:'Rails et supports',ref:'GS3000 Rail 3m',prix:17.68,unite:'u'},
+  {famille:'Rails et supports',ref:'Rail DIN 35mm',prix:0,unite:'ml'},
+  {famille:'Fixation',ref:'Tige filetée M8',prix:0,unite:'u'},
+  {famille:'Fixation',ref:'Tige filetée M10',prix:0,unite:'u'},
+  {famille:'Fixation',ref:'Écrou M8',prix:0,unite:'u'},
+  {famille:'Fixation',ref:'Écrou M10',prix:0,unite:'u'},
+  {famille:'Fixation',ref:'Cheville laiton 6mm',prix:0,unite:'u'},
+  {famille:'Fixation',ref:'Cheville laiton 8mm',prix:0,unite:'u'},
+  {famille:'Fixation',ref:'Cheville laiton 10mm',prix:0,unite:'u'},
+  {famille:'Fixation',ref:'Collier simple',prix:0,unite:'u'},
+  {famille:'Fixation',ref:'Collier double',prix:0,unite:'u'},
+  {famille:'Fixation',ref:'Cheville frapper',prix:0,unite:'u'},
+  {famille:'Boîtes et connectique',ref:'Boîte dérivation étanche',prix:0,unite:'u'},
+  {famille:'Boîtes et connectique',ref:'Boîte encastrée',prix:0,unite:'u'},
+  {famille:'Boîtes et connectique',ref:'Domino 6mm²',prix:0,unite:'u'},
+  {famille:'Boîtes et connectique',ref:'Domino 10mm²',prix:0,unite:'u'},
+  {famille:'Boîtes et connectique',ref:'Domino 16mm²',prix:0,unite:'u'},
+  {famille:'Boîtes et connectique',ref:'Serre-câble',prix:0,unite:'u'},
+  {famille:'Divers',ref:'Fouet Michaud 4 EBCP 6-35/16',prix:36.88,unite:'u'},
+];
+
+let currentChantierId=null;
+
+window.filterBPU=function(){
+  const fam=document.getElementById('bpu-famille').value;
+  const sel=document.getElementById('bpu-ref');
+  const filtered=fam?BPU.filter(b=>b.famille===fam):BPU;
+  sel.innerHTML=filtered.map(b=>'<option value="'+b.ref+'">'+b.ref+' — '+(b.prix>0?b.prix.toFixed(2)+' €/'+b.unite:'prix à compléter')+'</option>').join('');
+  updateBPUPreview();
+};
+
+window.updateBPUPreview=function(){
+  const refVal=document.getElementById('bpu-ref').value;
+  const qty=parseFloat(document.getElementById('bpu-qty').value)||0;
+  const item=BPU.find(b=>b.ref===refVal);
+  const prev=document.getElementById('bpu-preview');
+  if(item&&qty>0){
+    const total=item.prix*qty;
+    prev.style.display='block';
+    prev.innerHTML='<strong>'+item.ref+'</strong><br>'+qty+' '+item.unite+' × '+item.prix.toFixed(2)+' € = <span style="color:var(--orange);font-weight:700;">'+total.toFixed(2)+' €</span>';
+  } else {
+    prev.style.display='none';
+  }
+};
+
+window.addMateriel=async function(){
+  const refVal=document.getElementById('bpu-ref').value;
+  const qty=parseFloat(document.getElementById('bpu-qty').value);
+  if(!refVal||!qty||qty<=0){toast('⚠ Sélectionnez une référence et une quantité',true);return;}
+  const item=BPU.find(b=>b.ref===refVal);
+  if(!item)return;
+  const total=item.prix*qty;
+  await push(ref(db,'chantiers/'+currentChantierId+'/materiels'),{ref:refVal,famille:item.famille,prix:item.prix,unite:item.unite,qty,total});
+  document.getElementById('bpu-qty').value='';
+  document.getElementById('bpu-preview').style.display='none';
+  toast('✓ Matériel ajouté');
+  setTimeout(()=>openDetail(currentChantierId),400);
+};
+
+window.delMateriel=async function(cid,mid){
+  await remove(ref(db,'chantiers/'+cid+'/materiels/'+mid));
+  setTimeout(()=>openDetail(cid),400);
+};
+
+window.openMaterielModal=function(cid){
+  currentChantierId=cid;
+  filterBPU();
+  document.getElementById('bpu-qty').value='';
+  document.getElementById('bpu-preview').style.display='none';
+  document.getElementById('mo-materiel').classList.add('on');
+};
+
+// ═══════════ USERS ═══════════
+const USERS={
+  fousseni:{pass:'fousseni',role:'superadmin',nom:'Fousseni'},
+  abdou:{pass:'abdou',role:'admin',nom:'Abdou'},
+  fodie:{pass:'fodie',role:'admin',nom:'Fodie'},
+  christophe:{pass:'christophe',role:'logistique',nom:'Christophe'},
+  sekou:{pass:'sekou',role:'planning',nom:'Sékou'},
+  kunda:{pass:'kunda',role:'technicien',nom:'KUNDA'},
+  pape:{pass:'pape',role:'technicien',nom:'PAPE'},
+};
+const CAN={
+  superadmin:{chantiers:true,finances:true,edit:true,export:true,gererTech:true,absences:true},
+  admin:{chantiers:true,finances:true,edit:true,export:false,gererTech:true,absences:true},
+  logistique:{chantiers:true,finances:false,edit:false,export:false,gererTech:false,absences:false},
+  planning:{chantiers:false,finances:false,edit:false,export:false,gererTech:false,absences:false},
+  technicien:{chantiers:false,finances:false,edit:false,export:false,gererTech:false,absences:false},
+};
 const NATURES=["Travaux d'infra","Travaux préparatoires","Travaux préparatoires ENEDIS","Travaux préparatoires WAATCO","Finition chantier","Rendez-vous client","Rendez-vous chantier","Récupération matériel"];
 const MOIS=['Jan','Fév','Mar','Avr','Mai','Juin','Juil','Aoû','Sep','Oct','Nov','Déc'];
 const JOURS=['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
-let CU=null;let DB={chantiers:{},techniciens:{},absences:{}};
-const DT={KUNDA:{id:'KUNDA',nom:'KUNDA',taux:2000/151.67,actif:true},PAPE:{id:'PAPE',nom:'PAPE',taux:2200/151.67,actif:true},FOUSSENI:{id:'FOUSSENI',nom:'FOUSSENI',taux:0,actif:true},ABDOU:{id:'ABDOU',nom:'ABDOU',taux:0,actif:true},FODIE:{id:'FODIE',nom:'FODIE',taux:0,actif:true},CHRISTOPHE:{id:'CHRISTOPHE',nom:'CHRISTOPHE',taux:0,actif:true},SEKOU:{id:'SEKOU',nom:'SÉKOU',taux:0,actif:true}};
-const DC=[{client:'Amperus',adresse:'136 Av. Gén. de Gaulle, 78600 Maisons-Laffitte',nature:"Travaux d'infra",tech:'KUNDA',debut:'2026-03-31',fin:'2026-03-31',demi:null,facture:0,heures:8,materiel:0,depenses:{},statut:'En cours'},{client:'Waat',adresse:'87 rue de Saint-Denis, 93300 Aubervilliers',nature:'Travaux préparatoires WAATCO',tech:'KUNDA',debut:'2026-04-01',fin:'2026-04-01',demi:null,facture:1825,heures:8,materiel:0,depenses:{},statut:'En cours'},{client:'Amperus',adresse:'20 Cours du Danube, 77700 Serris',nature:'Finition chantier',tech:'PAPE',debut:'2026-04-01',fin:'2026-04-01',demi:null,facture:0,heures:8,materiel:0,depenses:{},statut:'En cours'},{client:'Amperus',adresse:'1 Av. de la Vieille France, 95380 Louvres',nature:"Travaux d'infra",tech:'KUNDA',debut:'2026-04-02',fin:'2026-04-02',demi:null,facture:0,heures:8,materiel:0,depenses:{},statut:'En cours'},{client:'Amperus',adresse:'38 rue Michel-Ange, 75015 Paris',nature:'Finition chantier',tech:'PAPE',debut:'2026-04-02',fin:'2026-04-02',demi:'après-midi',facture:0,heures:4,materiel:0,depenses:{},statut:'En cours'},{client:'Waat',adresse:'14 Chemin du Haut de Saint-Denis, 93300 Aubervilliers',nature:"Travaux d'infra",tech:'KUNDA',debut:'2026-04-03',fin:'2026-04-03',demi:null,facture:1649,heures:8,materiel:0,depenses:{},statut:'En cours'},{client:'Waat',adresse:'43 rue du Président Kennedy, 78800 Houilles',nature:"Travaux d'infra",tech:'KUNDA',debut:'2026-04-06',fin:'2026-04-10',demi:null,facture:4945.12,heures:40,materiel:0,depenses:{},statut:'En cours'},{client:'Amperus',adresse:'37 bis rue Louis Breguet, 78140 Vélizy-Villacoublay',nature:'Travaux préparatoires',tech:'PAPE',debut:'2026-04-06',fin:'2026-04-06',demi:'matin',facture:735,heures:4,materiel:0,depenses:{},statut:'En cours'},{client:'Amperus',adresse:'4 rue Marcel Leblanc, 93700 Drancy',nature:'Travaux préparatoires',tech:'PAPE',debut:'2026-04-06',fin:'2026-04-06',demi:'après-midi',facture:0,heures:4,materiel:0,depenses:{},statut:'En cours'},{client:'Amperus',adresse:'9 rue des Leux, 92140 Clamart',nature:'Travaux préparatoires',tech:'PAPE',debut:'2026-04-07',fin:'2026-04-07',demi:null,facture:950,heures:8,materiel:0,depenses:{},statut:'En cours'},{client:'Amperus',adresse:'4 rue au Mètre, 78290 Croissy-sur-Seine',nature:'Travaux préparatoires',tech:'PAPE',debut:'2026-04-08',fin:'2026-04-08',demi:'matin',facture:290,heures:4,materiel:0,depenses:{},statut:'En cours'},{client:'Amperus',adresse:'34 Av. de la République, 93150 Le Blanc-Mesnil',nature:'Travaux préparatoires',tech:'PAPE',debut:'2026-04-08',fin:'2026-04-08',demi:'après-midi',facture:340,heures:4,materiel:0,depenses:{},statut:'En cours'},{client:'Waat',adresse:'Rungis (adresse à compléter)',nature:'Finition chantier',tech:'PAPE',debut:'2026-04-09',fin:'2026-04-09',demi:null,facture:0,heures:8,materiel:0,depenses:{},statut:'En cours'},{client:'Waat',adresse:'Noisy-le-Grand (adresse à compléter)',nature:'Finition chantier',tech:'PAPE',debut:'2026-04-10',fin:'2026-04-10',demi:null,facture:0,heures:8,materiel:0,depenses:{},statut:'En cours'},{client:'Waat',adresse:'10 rue Maria (adresse à compléter)',nature:"Travaux d'infra",tech:'PAPE',debut:'2026-04-13',fin:'2026-04-13',demi:null,facture:0,heures:8,materiel:0,depenses:{},statut:'En cours'}];
+let CU=null;
+let DB={chantiers:{},techniciens:{},absences:{}};
+
+const DT={
+  KUNDA:{id:'KUNDA',nom:'KUNDA',taux:2000/151.67,actif:true},
+  PAPE:{id:'PAPE',nom:'PAPE',taux:2200/151.67,actif:true},
+  FOUSSENI:{id:'FOUSSENI',nom:'FOUSSENI',taux:0,actif:true},
+  ABDOU:{id:'ABDOU',nom:'ABDOU',taux:0,actif:true},
+  FODIE:{id:'FODIE',nom:'FODIE',taux:0,actif:true},
+  CHRISTOPHE:{id:'CHRISTOPHE',nom:'CHRISTOPHE',taux:0,actif:true},
+  SEKOU:{id:'SEKOU',nom:'SÉKOU',taux:0,actif:true},
+};
+
+const DC=[
+  {client:'Amperus',adresse:'136 Av. Gén. de Gaulle, 78600 Maisons-Laffitte',nature:"Travaux d'infra",tech:'KUNDA',debut:'2026-03-31',fin:'2026-03-31',demi:null,facture:0,heures:8,charge:'',chargeTel:'',contact:'',contactTel:'',acces:'',materiels:{},depenses:{},statut:'En cours'},
+  {client:'Waat',adresse:'87 rue de Saint-Denis, 93300 Aubervilliers',nature:'Travaux préparatoires WAATCO',tech:'KUNDA',debut:'2026-04-01',fin:'2026-04-01',demi:null,facture:1825,heures:8,charge:'',chargeTel:'',contact:'',contactTel:'',acces:'',materiels:{},depenses:{},statut:'En cours'},
+  {client:'Amperus',adresse:'20 Cours du Danube, 77700 Serris',nature:'Finition chantier',tech:'PAPE',debut:'2026-04-01',fin:'2026-04-01',demi:null,facture:0,heures:8,charge:'',chargeTel:'',contact:'',contactTel:'',acces:'',materiels:{},depenses:{},statut:'En cours'},
+  {client:'Amperus',adresse:'1 Av. de la Vieille France, 95380 Louvres',nature:"Travaux d'infra",tech:'KUNDA',debut:'2026-04-02',fin:'2026-04-02',demi:null,facture:0,heures:8,charge:'',chargeTel:'',contact:'',contactTel:'',acces:'',materiels:{},depenses:{},statut:'En cours'},
+  {client:'Amperus',adresse:'38 rue Michel-Ange, 75015 Paris',nature:'Finition chantier',tech:'PAPE',debut:'2026-04-02',fin:'2026-04-02',demi:'après-midi',facture:0,heures:4,charge:'',chargeTel:'',contact:'',contactTel:'',acces:'',materiels:{},depenses:{},statut:'En cours'},
+  {client:'Waat',adresse:'14 Chemin du Haut de Saint-Denis, 93300 Aubervilliers',nature:"Travaux d'infra",tech:'KUNDA',debut:'2026-04-03',fin:'2026-04-03',demi:null,facture:1649,heures:8,charge:'',chargeTel:'',contact:'',contactTel:'',acces:'',materiels:{},depenses:{},statut:'En cours'},
+  {client:'Waat',adresse:'43 rue du Président Kennedy, 78800 Houilles',nature:"Travaux d'infra",tech:'KUNDA',debut:'2026-04-06',fin:'2026-04-10',demi:null,facture:4945.12,heures:40,charge:'',chargeTel:'',contact:'',contactTel:'',acces:'',materiels:{},depenses:{},statut:'En cours'},
+  {client:'Amperus',adresse:'37 bis rue Louis Breguet, 78140 Vélizy-Villacoublay',nature:'Travaux préparatoires',tech:'PAPE',debut:'2026-04-06',fin:'2026-04-06',demi:'matin',facture:735,heures:4,charge:'',chargeTel:'',contact:'',contactTel:'',acces:'',materiels:{},depenses:{},statut:'En cours'},
+  {client:'Amperus',adresse:'4 rue Marcel Leblanc, 93700 Drancy',nature:'Travaux préparatoires',tech:'PAPE',debut:'2026-04-06',fin:'2026-04-06',demi:'après-midi',facture:0,heures:4,charge:'',chargeTel:'',contact:'',contactTel:'',acces:'',materiels:{},depenses:{},statut:'En cours'},
+  {client:'Amperus',adresse:'9 rue des Leux, 92140 Clamart',nature:'Travaux préparatoires',tech:'PAPE',debut:'2026-04-07',fin:'2026-04-07',demi:null,facture:950,heures:8,charge:'',chargeTel:'',contact:'',contactTel:'',acces:'',materiels:{},depenses:{},statut:'En cours'},
+  {client:'Amperus',adresse:'4 rue au Mètre, 78290 Croissy-sur-Seine',nature:'Travaux préparatoires',tech:'PAPE',debut:'2026-04-08',fin:'2026-04-08',demi:'matin',facture:290,heures:4,charge:'',chargeTel:'',contact:'',contactTel:'',acces:'',materiels:{},depenses:{},statut:'En cours'},
+  {client:'Amperus',adresse:'34 Av. de la République, 93150 Le Blanc-Mesnil',nature:'Travaux préparatoires',tech:'PAPE',debut:'2026-04-08',fin:'2026-04-08',demi:'après-midi',facture:340,heures:4,charge:'',chargeTel:'',contact:'',contactTel:'',acces:'',materiels:{},depenses:{},statut:'En cours'},
+  {client:'Waat',adresse:'Rungis (adresse à compléter)',nature:'Finition chantier',tech:'PAPE',debut:'2026-04-09',fin:'2026-04-09',demi:null,facture:0,heures:8,charge:'',chargeTel:'',contact:'',contactTel:'',acces:'',materiels:{},depenses:{},statut:'En cours'},
+  {client:'Waat',adresse:'Noisy-le-Grand (adresse à compléter)',nature:'Finition chantier',tech:'PAPE',debut:'2026-04-10',fin:'2026-04-10',demi:null,facture:0,heures:8,charge:'',chargeTel:'',contact:'',contactTel:'',acces:'',materiels:{},depenses:{},statut:'En cours'},
+  {client:'Waat',adresse:'10 rue Maria (adresse à compléter)',nature:"Travaux d'infra",tech:'PAPE',debut:'2026-04-13',fin:'2026-04-13',demi:null,facture:0,heures:8,charge:'',chargeTel:'',contact:'',contactTel:'',acces:'',materiels:{},depenses:{},statut:'En cours'},
+];
+
 function ca(){return Object.entries(DB.chantiers).map(([k,v])=>({...v,_key:k}));}
 function ta(){return Object.entries(DB.techniciens).map(([k,v])=>({...v,_key:k}));}
 function aa(){return Object.entries(DB.absences||{}).map(([k,v])=>({...v,_key:k}));}
 function gt(id){const t=DB.techniciens[id];return t?(t.taux||0):0;}
 function cmo(c){return(c.heures||0)*gt(c.tech);}
 function sd(c){return Object.values(c.depenses||{}).reduce((s,d)=>s+(d.montant||0),0);}
-function td(c){return cmo(c)+(c.materiel||0)+sd(c);}
+function sm(c){return Object.values(c.materiels||{}).reduce((s,m)=>s+(m.total||0),0);}
+function td(c){return cmo(c)+sd(c)+sm(c);}
 function mg(c){return(c.facture||0)-td(c);}
 function eur(n){if(!n&&n!==0)return'—';return new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);}
+function eur2(n){if(!n&&n!==0)return'—';return new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',minimumFractionDigits:2,maximumFractionDigits:2}).format(n);}
 function fd(s){if(!s)return'';return new Date(s+'T12:00:00').toLocaleDateString('fr-FR',{day:'numeric',month:'short'});}
 function fdF(s){if(!s)return'';return new Date(s+'T12:00:00').toLocaleDateString('fr-FR',{day:'numeric',month:'short',year:'numeric'});}
 function isT(s){const t=new Date(),d=new Date(s+'T12:00:00');return t.toDateString()===d.toDateString();}
 function tc(id){const m={KUNDA:'var(--kunda)',PAPE:'var(--pape)',FOUSSENI:'var(--purple)',ABDOU:'var(--purple)',FODIE:'var(--purple)',CHRISTOPHE:'#aaa',SEKOU:'#aaa'};return m[id]||'var(--accent)';}
+
 async function initDB(){
-  onValue(ref(db,'techniciens'),s=>{if(!s.exists())set(ref(db,'techniciens'),DT);else DB.techniciens=s.val()||{};if(CU){rP();if(document.getElementById('pg-chantiers').classList.contains('on'))rC();if(document.getElementById('pg-synthese').classList.contains('on'))rS();}});
-  onValue(ref(db,'chantiers'),s=>{if(!s.exists())DC.forEach(c=>push(ref(db,'chantiers'),c));else DB.chantiers=s.val()||{};if(CU){rP();if(document.getElementById('pg-chantiers').classList.contains('on'))rC();if(document.getElementById('pg-synthese').classList.contains('on'))rS();}});
-  onValue(ref(db,'absences'),s=>{DB.absences=s.val()||{};if(CU){rP();if(document.getElementById('pg-synthese').classList.contains('on'))rS();}});
+  onValue(ref(db,'techniciens'),s=>{
+    if(!s.exists())set(ref(db,'techniciens'),DT);
+    else DB.techniciens=s.val()||{};
+    if(CU)refresh();
+  });
+  onValue(ref(db,'chantiers'),s=>{
+    if(!s.exists())DC.forEach(c=>push(ref(db,'chantiers'),c));
+    else DB.chantiers=s.val()||{};
+    if(CU)refresh();
+  });
+  onValue(ref(db,'absences'),s=>{
+    DB.absences=s.val()||{};
+    if(CU)refresh();
+  });
 }
+
+function refresh(){
+  rP();
+  if(document.getElementById('pg-chantiers').classList.contains('on'))rC();
+  if(document.getElementById('pg-synthese').classList.contains('on'))rS();
+}
+
 window.doLogin=function(){
   const u=document.getElementById('lu').value.trim().toLowerCase();
   const p=document.getElementById('lp').value.trim().toLowerCase();
@@ -188,13 +508,20 @@ window.doLogin=function(){
   document.getElementById('uname').textContent=usr.nom;
   applyRole();rP();
 };
+
 window.doLogout=function(){
   if(!confirm('Se déconnecter ?'))return;
-  CU=null;document.getElementById('app').classList.remove('on');document.getElementById('login').style.display='flex';
-  document.getElementById('lu').value='';document.getElementById('lp').value='';
-  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));document.getElementById('nb-planning').classList.add('on');
-  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));document.getElementById('pg-planning').classList.add('on');
+  CU=null;
+  document.getElementById('app').classList.remove('on');
+  document.getElementById('login').style.display='flex';
+  document.getElementById('lu').value='';
+  document.getElementById('lp').value='';
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
+  document.getElementById('nb-planning').classList.add('on');
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
+  document.getElementById('pg-planning').classList.add('on');
 };
+
 function applyRole(){
   const d=CAN[CU.role];
   document.getElementById('nb-chantiers').style.display=d.chantiers?'':'none';
@@ -204,16 +531,19 @@ function applyRole(){
   document.getElementById('btn-absence').style.display=d.absences?'flex':'none';
   document.getElementById('exp-row-container').style.display=d.export?'':'none';
 }
+
 window.goPage=function(n,b){
   document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
   document.querySelectorAll('.nb').forEach(x=>x.classList.remove('on'));
   document.getElementById('pg-'+n).classList.add('on');b.classList.add('on');
   if(n==='planning')rP();if(n==='chantiers')rC();if(n==='synthese')rS();
 };
+
 function rP(){
   if(!CU)return;
   const isTech=CU.role==='technicien';
-  let data=ca();if(isTech)data=data.filter(c=>c.tech===CU.nom.toUpperCase()||c.tech===CU.nom);
+  let data=ca();
+  if(isTech)data=data.filter(c=>c.tech===CU.nom.toUpperCase()||c.tech===CU.nom);
   const dates=new Set();
   data.forEach(c=>{let d=new Date(c.debut+'T12:00:00'),fn=new Date(c.fin+'T12:00:00');while(d<=fn){if(d.getDay()!==0&&d.getDay()!==6)dates.add(d.toISOString().slice(0,10));d.setDate(d.getDate()+1);}});
   aa().forEach(a=>{let d=new Date(a.debut+'T12:00:00'),fn=new Date(a.fin+'T12:00:00');while(d<=fn){if(d.getDay()!==0&&d.getDay()!==6)dates.add(d.toISOString().slice(0,10));d.setDate(d.getDate()+1);}});
@@ -229,7 +559,7 @@ function rP(){
       const d=new Date(ds+'T12:00:00');
       const entries=data.filter(c=>{const db=new Date(c.debut+'T12:00:00'),fn=new Date(c.fin+'T12:00:00');return d>=db&&d<=fn;});
       const absJ=aa().filter(a=>a.debut<=ds&&a.fin>=ds);
-      html+='<div class="cd"><div class="cdh"><span class="cdn'+(isT(ds)?' today':'')+'">'+(d.getDate())+'</span><span class="cdname">'+JOURS[d.getDay()]+' '+MOIS[d.getMonth()]+(isT(ds)?" · Aujourd'hui":'')+'</span></div>';
+      html+='<div class="cd"><div class="cdh"><span class="cdn'+(isT(ds)?' today':'')+'">'+d.getDate()+'</span><span class="cdname">'+JOURS[d.getDay()]+' '+MOIS[d.getMonth()]+(isT(ds)?" · Aujourd'hui":'')+'</span></div>';
       let hasC=false;
       absJ.forEach(a=>{hasC=true;const col=tc(a.tech);const tl=a.type==='conge'?'Congé':'Absent';const tcl=a.type==='conge'?'cng':'abs';html+='<div class="ce"><div class="cdot" style="background:'+col+'"></div><div class="ci"><div class="ctech" style="color:'+col+'">'+a.tech+' <span class="absent-tag '+tcl+'">'+tl+'</span></div>'+(a.note?'<div class="caddr">'+a.note+'</div>':'')+'</div></div>';});
       entries.forEach(c=>{hasC=true;const col=tc(c.tech);const cc=c.client==='Amperus'?'var(--amperus)':c.client==='Interne'?'var(--text3)':'var(--waat)';const dm=c.demi?' · '+c.demi:'';const ck=CAN[CU.role].chantiers||CAN[CU.role].edit;html+='<div class="ce'+(ck?' clickable':'')+'"'+(ck?' onclick="openDetail(\''+c._key+'\')"':'')+'>  <div class="cdot" style="background:'+col+'"></div><div class="ci">'+(!isTech?'<div class="ctech" style="color:'+col+'">'+c.tech+dm+'</div>':'')+'<div class="caddr">'+c.adresse+'</div><div class="ccli" style="color:'+cc+'">'+c.client+' · '+c.nature+'</div></div></div>';});
@@ -240,51 +570,68 @@ function rP(){
   });
   document.getElementById('pl-body').innerHTML=html;
 }
+
 function rC(){
   if(!CU)return;
-  const d=CAN[CU.role];const arr=ca().sort((a,b)=>a.debut<b.debut?-1:1);
+  const d=CAN[CU.role];
+  const arr=ca().sort((a,b)=>a.debut<b.debut?-1:1);
   document.getElementById('ch-count').textContent=arr.length+' chantiers';
   let html='';
   arr.forEach(c=>{
-    const m=mg(c),mc=m>0?'g':m<0?'r':'n';const col=tc(c.tech);
+    const m=mg(c),mc=m>0?'g':m<0?'r':'n';
+    const col=tc(c.tech);
     const cb=c.client==='Amperus'?'ba':c.client==='Interne'?'bd':'bw';
     const dm=c.demi?'<span class="badge bm">'+c.demi+'</span>':'';
-    const amts=d.finances?'<div class="camts"><div class="ab"><div class="al">Facturé HT</div><div class="av">'+eur(c.facture)+'</div></div><div class="ab"><div class="al">Dépenses</div><div class="av">'+eur(td(c))+'</div></div><div class="ab"><div class="al">Marge</div><div class="av '+mc+'">'+(c.facture?eur(m):'—')+'</div></div></div>':'';
+    const amts=d.finances?'<div class="camts"><div class="ab"><div class="al">Facturé HT</div><div class="av">'+eur(c.facture)+'</div></div><div class="ab"><div class="al">Coût total</div><div class="av">'+eur(td(c))+'</div></div><div class="ab"><div class="al">Marge</div><div class="av '+mc+'">'+(c.facture?eur(m):'—')+'</div></div></div>':'';
     html+='<div class="card" onclick="openDetail(\''+c._key+'\')"><div class="cacc" style="background:'+col+'"></div><div style="padding-left:8px"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;"><div style="font-size:14px;font-weight:600;line-height:1.3;flex:1;padding-right:8px;">'+c.adresse+'</div><span class="badge '+cb+'">'+c.client+'</span></div><div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px;"><span class="badge" style="background:rgba(79,142,255,.12);color:'+col+'">'+c.tech+'</span><span class="badge bd">'+fd(c.debut)+(c.debut!==c.fin?' → '+fd(c.fin):'')+'</span>'+dm+'</div><div style="font-size:12px;color:var(--text3);margin-bottom:'+(d.finances?'8px':'0')+'">'+c.nature+'</div>'+amts+'</div></div>';
   });
   document.getElementById('ch-list').innerHTML=html||'<div style="text-align:center;padding:40px;color:var(--text3)">Aucun chantier</div>';
 }
+
 function rS(){
   if(!CU)return;
   const arr=ca();
   const tCA=arr.reduce((s,c)=>s+(c.facture||0),0);
   const tMg=arr.reduce((s,c)=>s+mg(c),0);
   const tDp=arr.reduce((s,c)=>s+td(c),0);
-  let html='<div class="krow"><div class="kcard"><div class="kl">CA total HT</div><div class="kv a">'+eur(tCA)+'</div></div><div class="kcard"><div class="kl">Marge totale</div><div class="kv '+(tMg>=0?'g':'o')+'">'+eur(tMg)+'</div></div></div><div class="krow"><div class="kcard"><div class="kl">Dépenses</div><div class="kv o">'+eur(tDp)+'</div></div><div class="kcard"><div class="kl">Chantiers</div><div class="kv">'+arr.length+'</div></div></div>';
+  let html='<div class="krow"><div class="kcard"><div class="kl">CA total HT</div><div class="kv a">'+eur(tCA)+'</div></div><div class="kcard"><div class="kl">Marge totale</div><div class="kv '+(tMg>=0?'g':'o')+'">'+eur(tMg)+'</div></div></div><div class="krow"><div class="kcard"><div class="kl">Coût total</div><div class="kv o">'+eur(tDp)+'</div></div><div class="kcard"><div class="kl">Chantiers</div><div class="kv">'+arr.length+'</div></div></div>';
   html+='<div class="stitle">Par client</div>';
   ['Amperus','Waat'].forEach(cli=>{
     const cc=arr.filter(c=>c.client===cli);
-    const ca2=cc.reduce((s,c)=>s+(c.facture||0),0);const dp=cc.reduce((s,c)=>s+td(c),0);const mg2=cc.reduce((s,c)=>s+mg(c),0);
-    const pct=tCA?ca2/tCA*100:0;const col=cli==='Amperus'?'var(--amperus)':'var(--waat)';
-    html+='<div class="abs-card"><div style="display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;margin-bottom:12px;"><span style="width:10px;height:10px;border-radius:50%;background:'+col+';display:inline-block"></span>'+cli+'<span style="font-size:12px;color:var(--text3);font-weight:400">'+cc.length+' chantiers</span></div><div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--text2)">CA facturé HT</span><span style="font-size:14px;font-weight:600;font-family:DM Mono,monospace;color:'+col+'">'+eur(ca2)+'</span></div><div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--text2)">Dépenses</span><span style="font-size:14px;font-weight:600;font-family:DM Mono,monospace;">'+eur(dp)+'</span></div><div style="display:flex;justify-content:space-between;padding:8px 0;"><span style="font-size:13px;color:var(--text2)">Marge brute</span><span style="font-size:14px;font-weight:600;font-family:DM Mono,monospace;color:'+(mg2>=0?'var(--green)':'var(--red)')+'">'+eur(mg2)+'</span></div><div style="height:6px;background:var(--bg3);border-radius:3px;overflow:hidden;"><div style="height:100%;width:'+pct+'%;background:'+col+';border-radius:3px;"></div></div></div>';
+    const ca2=cc.reduce((s,c)=>s+(c.facture||0),0);
+    const dp=cc.reduce((s,c)=>s+td(c),0);
+    const mg2=cc.reduce((s,c)=>s+mg(c),0);
+    const pct=tCA?ca2/tCA*100:0;
+    const col=cli==='Amperus'?'var(--amperus)':'var(--waat)';
+    html+='<div class="abs-card"><div style="display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;margin-bottom:12px;"><span style="width:10px;height:10px;border-radius:50%;background:'+col+';display:inline-block"></span>'+cli+'<span style="font-size:12px;color:var(--text3);font-weight:400">'+cc.length+' chantiers</span></div><div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--text2)">CA facturé HT</span><span style="font-size:14px;font-weight:600;font-family:DM Mono,monospace;color:'+col+'">'+eur(ca2)+'</span></div><div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--text2)">Coût total</span><span style="font-size:14px;font-weight:600;font-family:DM Mono,monospace;">'+eur(dp)+'</span></div><div style="display:flex;justify-content:space-between;padding:8px 0;"><span style="font-size:13px;color:var(--text2)">Marge brute</span><span style="font-size:14px;font-weight:600;font-family:DM Mono,monospace;color:'+(mg2>=0?'var(--green)':'var(--red)')+'">'+eur(mg2)+'</span></div><div style="height:6px;background:var(--bg3);border-radius:3px;overflow:hidden;"><div style="height:100%;width:'+pct+'%;background:'+col+';border-radius:3px;"></div></div></div>';
   });
   html+='<div class="stitle">Absences & congés</div>';
   const abs=aa();
   if(!abs.length){html+='<div style="color:var(--text3);font-size:13px;padding:12px 0;">Aucune absence enregistrée</div>';}
-  else{const bt={};abs.forEach(a=>{if(!bt[a.tech])bt[a.tech]=[];bt[a.tech].push(a);});Object.entries(bt).forEach(([tid,absT])=>{const col=tc(tid);html+='<div class="abs-card"><div class="abs-header"><div class="abs-name" style="color:'+col+'">'+tid+'</div><span style="font-size:12px;color:var(--text3)">'+absT.length+' événement(s)</span></div>';absT.forEach(a=>{const tl=a.type==='conge'?'Congé':'Absent';const tcl=a.type==='conge'?'cng':'abs';html+='<div class="abs-item"><span class="abs-type absent-tag '+tcl+'">'+tl+'</span><span>'+fd(a.debut)+(a.debut!==a.fin?' → '+fd(a.fin):'')+'</span>'+(a.note?'<span style="color:var(--text3);font-size:12px;">'+a.note+'</span>':'')+(CAN[CU.role].absences?'<button onclick="delAbsence(\''+a._key+'\')" style="margin-left:auto;background:none;border:none;color:var(--text3);cursor:pointer;font-size:14px;">✕</button>':'')+'</div>';});html+='</div>';});}
+  else{
+    const bt={};
+    abs.forEach(a=>{if(!bt[a.tech])bt[a.tech]=[];bt[a.tech].push(a);});
+    Object.entries(bt).forEach(([tid,absT])=>{
+      const col=tc(tid);
+      html+='<div class="abs-card"><div class="abs-header"><div class="abs-name" style="color:'+col+'">'+tid+'</div><span style="font-size:12px;color:var(--text3)">'+absT.length+' événement(s)</span></div>';
+      absT.forEach(a=>{
+        const tl=a.type==='conge'?'Congé':'Absent';
+        const tcl=a.type==='conge'?'cng':'abs';
+        html+='<div class="abs-item"><span class="abs-type absent-tag '+tcl+'">'+tl+'</span><span>'+fd(a.debut)+(a.debut!==a.fin?' → '+fd(a.fin):'')+'</span>'+(a.note?'<span style="color:var(--text3);font-size:12px;">'+a.note+'</span>':'')+(CAN[CU.role].absences?'<button onclick="delAbsence(\''+a._key+'\')" style="margin-left:auto;background:none;border:none;color:var(--text3);cursor:pointer;font-size:14px;">✕</button>':'')+'</div>';
+      });
+      html+='</div>';
+    });
+  }
   document.getElementById('sy-body').innerHTML=html;
 }
+
 window.openDetail=function(key){
   const c=DB.chantiers[key];if(!c)return;
-  const d=CAN[CU.role];const col=tc(c.tech);const cc=c.client==='Amperus'?'var(--amperus)':c.client==='Interne'?'var(--text3)':'var(--waat)';
-  const deps=Object.entries(c.depenses||{});
-  let dh='';
-  if(!deps.length){dh='<div style="color:var(--text3);font-size:13px;padding:8px 0;">Aucune dépense enregistrée</div>';}
-  else{const tot=deps.reduce((s,[,x])=>s+(x.montant||0),0);deps.forEach(([dk,dep])=>{dh+='<div class="dep-item"><div class="dep-info"><div class="dep-desc">'+dep.desc+'</div><div class="dep-date">'+fdF(dep.date)+'</div></div><div class="dep-amt">'+eur(dep.montant)+'</div>'+(d.edit?'<button class="dep-del" onclick="delDepense(\''+key+'\',\''+dk+'\')">✕</button>':'')+'</div>';});dh+='<div class="dep-total"><span style="font-size:13px;color:var(--orange);font-weight:600;">Total commandes</span><span style="font-size:16px;font-weight:700;font-family:DM Mono,monospace;color:var(--orange);">'+eur(tot)+'</span></div>';}
-  const eh=d.edit?`<div class="stitle">Modifier</div><div class="fr"><div class="fi"><label class="fl">Client</label><select id="e-client"><option ${c.client==='Amperus'?'selected':''}>Amperus</option><option ${c.client==='Waat'?'selected':''}>Waat</option><option ${c.client==='Interne'?'selected':''}>Interne</option></select></div><div class="fi"><label class="fl">Assigné à</label><select id="e-tech">${ta().filter(t=>t.actif).map(t=>'<option value="'+t.id+'"'+(c.tech===t.id?' selected':'')+'>'+t.nom+'</option>').join('')}</select></div></div><div class="fi"><label class="fl">Adresse</label><input id="e-adresse" type="text" value="${c.adresse}"></div><div class="fi"><label class="fl">Nature</label><select id="e-nature" onchange="toggleNatureEdit()">${NATURES.map(n=>'<option'+(c.nature===n?' selected':'')+'>'+n+'</option>').join('')}<option value="autre"${!NATURES.includes(c.nature)?' selected':''}>Autre…</option></select></div><div class="fi" id="e-nature-other" style="display:${NATURES.includes(c.nature)?'none':'block'};"><label class="fl">Préciser</label><input id="e-nature-text" type="text" value="${!NATURES.includes(c.nature)?c.nature:''}"></div><div class="fr"><div class="fi"><label class="fl">Début</label><input id="e-debut" type="date" value="${c.debut}"></div><div class="fi"><label class="fl">Fin</label><input id="e-fin" type="date" value="${c.fin}"></div></div><div class="fi"><label class="fl">Demi-journée</label><select id="e-demi"><option value=""${!c.demi?' selected':''}>Journée entière</option><option value="matin"${c.demi==='matin'?' selected':''}>Matin</option><option value="après-midi"${c.demi==='après-midi'?' selected':''}>Après-midi</option></select></div><div class="fr"><div class="fi"><label class="fl">Facturé HT (€)</label><input id="e-facture" type="number" value="${c.facture||0}" step="0.01" inputmode="decimal"></div><div class="fi"><label class="fl">Heures MO</label><input id="e-heures" type="number" value="${c.heures||8}" step="0.5" inputmode="decimal"></div></div><div class="fi"><label class="fl">Matériel (€)</label><input id="e-materiel" type="number" value="${c.materiel||0}" step="0.01" inputmode="decimal"></div><div class="fi"><label class="fl">Statut</label><select id="e-statut"><option${c.statut==='En cours'?' selected':''}>En cours</option><option${c.statut==='Terminé'?' selected':''}>Terminé</option><option${c.statut==='Facturé'?' selected':''}>Facturé</option></select></div>`:'';
-  const rh=d.finances?`<div class="stitle">Résultat</div><div class="camts" style="margin-bottom:16px;"><div class="ab"><div class="al">Coût MO</div><div class="av">${eur(cmo(c))}</div></div><div class="ab"><div class="al">Total dép.</div><div class="av" style="color:var(--orange);">${eur(td(c))}</div></div><div class="ab"><div class="al">Marge</div><div class="av ${mg(c)>0?'g':mg(c)<0?'r':'n'}">${c.facture?eur(mg(c)):'—'}</div></div></div>`:'';
-  const dah=d.edit?`<div class="stitle">Ajouter une dépense</div><div class="fr" style="margin-bottom:8px;"><div class="fi"><label class="fl">Date</label><input id="dep-date" type="date" value="${new Date().toISOString().slice(0,10)}"></div><div class="fi"><label class="fl">Montant (€)</label><input id="dep-amt" type="number" placeholder="0" step="0.01" inputmode="decimal"></div></div><div class="fi" style="margin-bottom:8px;"><label class="fl">Description</label><input id="dep-desc" type="text" placeholder="Ex: Câble 4x16mm²…"></div><button class="btn-sm" style="width:100%;" onclick="addDepense('${key}')">+ Ajouter cette dépense</button>`:'';
-  // Bloc contact
+  const d=CAN[CU.role];
+  const col=tc(c.tech);
+  const cc=c.client==='Amperus'?'var(--amperus)':c.client==='Interne'?'var(--text3)':'var(--waat)';
+
+  // Contact block
   let ch='';
   if(c.charge||c.contact||c.acces){
     ch='<div class="stitle">👤 Contact & accès</div><div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:8px;">';
@@ -293,35 +640,230 @@ window.openDetail=function(key){
     if(c.acces){ch+='<div><div style="font-size:10px;color:var(--text3);margin-bottom:3px;font-weight:600;">🔑 ACCÈS</div><div style="font-size:13px;color:var(--text2);line-height:1.5;">'+c.acces+'</div></div>';}
     ch+='</div>';
   }
-  document.getElementById('mo-detail-body').innerHTML='<div class="mt">'+c.nature+'</div><div style="color:var(--text2);font-size:13px;line-height:1.5;margin-bottom:14px;">'+c.adresse+'</div><div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;"><span class="badge" style="background:rgba(79,142,255,.12);color:'+col+';">'+c.tech+'</span><span class="badge" style="background:rgba(34,201,122,.1);color:'+cc+';">'+c.client+'</span><span class="badge bd">'+fd(c.debut)+(c.debut!==c.fin?' → '+fd(c.fin):'')+'</span>'+(c.demi?'<span class="badge bm">'+c.demi+'</span>':'')+'</div>'+ch+eh+(d.edit?'<button class="btn btn-p" onclick="saveEdit(\''+key+'\')" style="margin-top:4px;">Enregistrer</button>':'')+rh+'<div class="stitle">📦 Journal des dépenses</div>'+dh+dah+(d.edit?'<button class="btn btn-d" onclick="confirmDel(\''+key+'\')" style="margin-top:16px;">Supprimer ce chantier</button>':'')+'<button onclick="closeModal(\'mo-detail\')" style="width:100%;background:none;border:none;color:var(--text3);padding:14px;font-family:DM Sans,sans-serif;font-size:14px;cursor:pointer;margin-top:6px;">Fermer</button>';
+
+  // Matériels block
+  const mats=Object.entries(c.materiels||{});
+  let mh='<div class="stitle">🔧 Matériel chantier</div>';
+  if(!mats.length){mh+='<div style="color:var(--text3);font-size:13px;padding:8px 0 4px;">Aucun matériel ajouté</div>';}
+  else{
+    const totalMat=mats.reduce((s,[,m])=>s+(m.total||0),0);
+    mats.forEach(([mk,m])=>{mh+='<div class="mat-item"><div class="mat-info"><div class="mat-ref">'+m.ref+'</div><div class="mat-prix">'+m.qty+' '+m.unite+' × '+(m.prix||0).toFixed(2)+' €</div></div><div class="mat-total">'+eur2(m.total)+'</div>'+(d.edit?'<button class="mat-del" onclick="delMateriel(\''+key+'\',\''+mk+'\')">✕</button>':'')+'</div>';});
+    mh+='<div class="dep-total"><span style="font-size:13px;color:var(--orange);font-weight:600;">Total matériel</span><span style="font-size:16px;font-weight:700;font-family:DM Mono,monospace;color:var(--orange);">'+eur2(totalMat)+'</span></div>';
+  }
+  if(d.edit){mh+='<button class="btn-sm" onclick="openMaterielModal(\''+key+'\')">+ Ajouter du matériel</button>';}
+
+  // Résultat
+  const rh=d.finances?'<div class="stitle">Résultat</div><div class="camts" style="margin-bottom:16px;"><div class="ab"><div class="al">Coût MO</div><div class="av">'+eur(cmo(c))+'</div></div><div class="ab"><div class="al">Matériel</div><div class="av" style="color:var(--orange);">'+eur(sm(c))+'</div></div><div class="ab"><div class="al">Marge</div><div class="av '+(mg(c)>0?'g':mg(c)<0?'r':'n')+'">'+(c.facture?eur(mg(c)):'—')+'</div></div></div>':'';
+
+  // Edit block
+  const eh=d.edit?'<div class="stitle">Modifier</div><div class="fr"><div class="fi"><label class="fl">Client</label><select id="e-client"><option '+(c.client==='Amperus'?'selected':'')+'>Amperus</option><option '+(c.client==='Waat'?'selected':'')+'>Waat</option><option '+(c.client==='Interne'?'selected':'')+'>Interne</option></select></div><div class="fi"><label class="fl">Assigné à</label><select id="e-tech">'+ta().filter(t=>t.actif).map(t=>'<option value="'+t.id+'"'+(c.tech===t.id?' selected':'')+'>'+t.nom+'</option>').join('')+'</select></div></div><div class="fi"><label class="fl">Adresse</label><input id="e-adresse" type="text" value="'+c.adresse+'"></div><div class="fi"><label class="fl">Nature</label><select id="e-nature" onchange="toggleNatureEdit()">'+NATURES.map(n=>'<option'+(c.nature===n?' selected':'')+'>'+n+'</option>').join('')+'<option value="autre"'+(!NATURES.includes(c.nature)?' selected':'')+'>Autre…</option></select></div><div class="fi" id="e-nature-other" style="display:'+(!NATURES.includes(c.nature)?'block':'none')+';"><label class="fl">Préciser</label><input id="e-nature-text" type="text" value="'+(!NATURES.includes(c.nature)?c.nature:'')+'"></div><div class="fr"><div class="fi"><label class="fl">Début</label><input id="e-debut" type="date" value="'+c.debut+'"></div><div class="fi"><label class="fl">Fin</label><input id="e-fin" type="date" value="'+c.fin+'"></div></div><div class="fi"><label class="fl">Demi-journée</label><select id="e-demi"><option value=""'+(!c.demi?' selected':'')+'>Journée entière</option><option value="matin"'+(c.demi==='matin'?' selected':'')+'>Matin</option><option value="après-midi"'+(c.demi==='après-midi'?' selected':'')+'>Après-midi</option></select></div><div class="fr"><div class="fi"><label class="fl">Facturé HT (€)</label><input id="e-facture" type="number" value="'+(c.facture||0)+'" step="0.01" inputmode="decimal"></div><div class="fi"><label class="fl">Heures MO</label><input id="e-heures" type="number" value="'+(c.heures||8)+'" step="0.5" inputmode="decimal"></div></div><div class="stitle">👤 Contact & accès</div><div class="fr"><div class="fi"><label class="fl">Chargé d\'affaires</label><input id="e-charge" type="text" value="'+(c.charge||'')+'"></div><div class="fi"><label class="fl">Tél.</label><input id="e-charge-tel" type="tel" value="'+(c.chargeTel||'')+'"></div></div><div class="fr"><div class="fi"><label class="fl">Contact site</label><input id="e-contact" type="text" value="'+(c.contact||'')+'"></div><div class="fi"><label class="fl">Tél.</label><input id="e-contact-tel" type="tel" value="'+(c.contactTel||'')+'"></div></div><div class="fi"><label class="fl">Accès</label><textarea id="e-acces">'+(c.acces||'')+'</textarea></div><div class="fi"><label class="fl">Statut</label><select id="e-statut"><option'+(c.statut==='En cours'?' selected':'')+'>En cours</option><option'+(c.statut==='Terminé'?' selected':'')+'>Terminé</option><option'+(c.statut==='Facturé'?' selected':'')+'>Facturé</option></select></div>':'';
+
+  // Dépenses
+  const deps=Object.entries(c.depenses||{});
+  let dh='';
+  if(!deps.length){dh='<div style="color:var(--text3);font-size:13px;padding:8px 0 4px;">Aucune dépense enregistrée</div>';}
+  else{
+    const tot=deps.reduce((s,[,x])=>s+(x.montant||0),0);
+    deps.forEach(([dk,dep])=>{dh+='<div class="dep-item"><div class="dep-info"><div class="dep-desc">'+dep.desc+'</div><div class="dep-date">'+fdF(dep.date)+'</div></div><div class="dep-amt">'+eur2(dep.montant)+'</div>'+(d.edit?'<button class="dep-del" onclick="delDepense(\''+key+'\',\''+dk+'\')">✕</button>':'')+'</div>';});
+    dh+='<div class="dep-total"><span style="font-size:13px;color:var(--orange);font-weight:600;">Total dépenses</span><span style="font-size:16px;font-weight:700;font-family:DM Mono,monospace;color:var(--orange);">'+eur2(tot)+'</span></div>';
+  }
+
+  const depAddHtml=d.edit?'<div class="stitle">💰 Autres dépenses</div>'+dh+'<div class="fr" style="margin-top:10px;margin-bottom:8px;"><div class="fi"><label class="fl">Date</label><input id="dep-date" type="date" value="'+new Date().toISOString().slice(0,10)+'"></div><div class="fi"><label class="fl">Montant (€)</label><input id="dep-amt" type="number" placeholder="0" step="0.01" inputmode="decimal"></div></div><div class="fi" style="margin-bottom:8px;"><label class="fl">Description</label><input id="dep-desc" type="text" placeholder="Ex: location nacelle…"></div><button class="btn-sm" onclick="addDepense(\''+key+'\')">+ Ajouter dépense</button>':'<div class="stitle">💰 Dépenses</div>'+dh;
+
+  document.getElementById('mo-detail-body').innerHTML=
+    '<div class="mt">'+c.nature+'</div>'+
+    '<div style="color:var(--text2);font-size:13px;line-height:1.5;margin-bottom:14px;">'+c.adresse+'</div>'+
+    '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;">'+
+    '<span class="badge" style="background:rgba(79,142,255,.12);color:'+col+';">'+c.tech+'</span>'+
+    '<span class="badge" style="background:rgba(34,201,122,.1);color:'+cc+';">'+c.client+'</span>'+
+    '<span class="badge bd">'+fd(c.debut)+(c.debut!==c.fin?' → '+fd(c.fin):'')+'</span>'+
+    (c.demi?'<span class="badge bm">'+c.demi+'</span>':'')+
+    '</div>'+
+    ch+mh+rh+eh+
+    (d.edit?'<button class="btn btn-p" onclick="saveEdit(\''+key+'\')" style="margin-top:4px;">Enregistrer modifications</button>':'')+
+    depAddHtml+
+    (d.edit?'<button class="btn btn-d" onclick="confirmDel(\''+key+'\')" style="margin-top:16px;">Supprimer ce chantier</button>':'')+
+    '<button onclick="closeModal(\'mo-detail\')" style="width:100%;background:none;border:none;color:var(--text3);padding:14px;font-family:DM Sans,sans-serif;font-size:14px;cursor:pointer;margin-top:6px;">Fermer</button>';
+
   document.getElementById('mo-detail').classList.add('on');
 };
-window.toggleNatureEdit=function(){const s=document.getElementById('e-nature'),b=document.getElementById('e-nature-other');if(s&&b)b.style.display=s.value==='autre'?'block':'none';};
+
+window.toggleNatureEdit=function(){
+  const s=document.getElementById('e-nature'),b=document.getElementById('e-nature-other');
+  if(s&&b)b.style.display=s.value==='autre'?'block':'none';
+};
+
 window.saveEdit=async function(key){
   const c=DB.chantiers[key];if(!c)return;
   const ns=document.getElementById('e-nature').value;
   const nat=ns==='autre'?(document.getElementById('e-nature-text').value.trim()||c.nature):ns;
-  await update(ref(db,'chantiers/'+key),{client:document.getElementById('e-client').value,tech:document.getElementById('e-tech').value,adresse:document.getElementById('e-adresse').value.trim()||c.adresse,nature:nat,debut:document.getElementById('e-debut').value,fin:document.getElementById('e-fin').value,demi:document.getElementById('e-demi').value||null,facture:parseFloat(document.getElementById('e-facture').value)||0,heures:parseFloat(document.getElementById('e-heures').value)||0,materiel:parseFloat(document.getElementById('e-materiel').value)||0,statut:document.getElementById('e-statut').value});
+  await update(ref(db,'chantiers/'+key),{
+    client:document.getElementById('e-client').value,
+    tech:document.getElementById('e-tech').value,
+    adresse:document.getElementById('e-adresse').value.trim()||c.adresse,
+    nature:nat,
+    debut:document.getElementById('e-debut').value,
+    fin:document.getElementById('e-fin').value,
+    demi:document.getElementById('e-demi').value||null,
+    facture:parseFloat(document.getElementById('e-facture').value)||0,
+    heures:parseFloat(document.getElementById('e-heures').value)||0,
+    charge:document.getElementById('e-charge').value.trim(),
+    chargeTel:document.getElementById('e-charge-tel').value.trim(),
+    contact:document.getElementById('e-contact').value.trim(),
+    contactTel:document.getElementById('e-contact-tel').value.trim(),
+    acces:document.getElementById('e-acces').value.trim(),
+    statut:document.getElementById('e-statut').value,
+  });
   closeModal('mo-detail');toast('✓ Chantier mis à jour');
 };
-window.confirmDel=async function(key){if(!confirm('Supprimer ?'))return;await remove(ref(db,'chantiers/'+key));closeModal('mo-detail');toast('Chantier supprimé');};
-window.addDepense=async function(key){const desc=document.getElementById('dep-desc').value.trim();const amt=parseFloat(document.getElementById('dep-amt').value);const date=document.getElementById('dep-date').value;if(!desc||!amt||amt<=0){toast('⚠ Remplissez description et montant',true);return;}await push(ref(db,'chantiers/'+key+'/depenses'),{date,desc,montant:amt});toast('✓ Dépense ajoutée');setTimeout(()=>openDetail(key),300);};
-window.delDepense=async function(k,dk){await remove(ref(db,'chantiers/'+k+'/depenses/'+dk));setTimeout(()=>openDetail(k),300);};
-window.openAddChantier=function(){const today=new Date().toISOString().slice(0,10);document.getElementById('mo-chantier-title').textContent='Nouveau chantier';document.getElementById('f-debut').value=today;document.getElementById('f-fin').value=today;document.getElementById('f-adresse').value='';document.getElementById('f-facture').value='0';document.getElementById('f-heures').value='8';document.getElementById('f-materiel').value='0';document.getElementById('f-demi').value='';document.getElementById('f-nature-sel').value=NATURES[0];document.getElementById('f-nature-other').style.display='none';const sel=document.getElementById('f-tech');sel.innerHTML=ta().filter(t=>t.actif).map(t=>'<option value="'+t.id+'">'+t.nom+'</option>').join('');document.getElementById('mo-chantier').classList.add('on');};
-window.toggleNature=function(){const s=document.getElementById('f-nature-sel'),b=document.getElementById('f-nature-other');if(s&&b)b.style.display=s.value==='autre'?'block':'none';};
-window.saveChantier=async function(){const adr=document.getElementById('f-adresse').value.trim();if(!adr){toast('⚠ Adresse requise',true);return;}const ns=document.getElementById('f-nature-sel').value;const nat=ns==='autre'?(document.getElementById('f-nature-text').value.trim()||'Travaux'):ns;await push(ref(db,'chantiers'),{client:document.getElementById('f-client').value,adresse:adr,nature:nat,tech:document.getElementById('f-tech').value,debut:document.getElementById('f-debut').value,fin:document.getElementById('f-fin').value,demi:document.getElementById('f-demi').value||null,facture:parseFloat(document.getElementById('f-facture').value)||0,heures:parseFloat(document.getElementById('f-heures').value)||8,materiel:parseFloat(document.getElementById('f-materiel').value)||0,charge:document.getElementById('f-charge').value.trim(),chargeTel:document.getElementById('f-charge-tel').value.trim(),contact:document.getElementById('f-contact').value.trim(),contactTel:document.getElementById('f-contact-tel').value.trim(),acces:document.getElementById('f-acces').value.trim(),statut:'En cours',depenses:{}});closeModal('mo-chantier');toast('✓ Chantier ajouté');};
-window.openAddTechModal=function(){document.getElementById('new-tech-nom').value='';document.getElementById('new-tech-taux').value='';document.getElementById('mo-add-tech').classList.add('on');};
-window.saveTechnicien=async function(){const nom=document.getElementById('new-tech-nom').value.trim().toUpperCase();if(!nom){toast('⚠ Nom requis',true);return;}if(DB.techniciens[nom]){toast('⚠ Existe déjà',true);return;}const taux=parseFloat(document.getElementById('new-tech-taux').value)||0;await set(ref(db,'techniciens/'+nom),{id:nom,nom,taux,actif:true});closeModal('mo-add-tech');toast('✓ '+nom+' ajouté');};
-window.openAbsenceModal=function(){const sel=document.getElementById('abs-tech');sel.innerHTML=ta().filter(t=>t.actif).map(t=>'<option value="'+t.id+'">'+t.nom+'</option>').join('');const today=new Date().toISOString().slice(0,10);document.getElementById('abs-debut').value=today;document.getElementById('abs-fin').value=today;document.getElementById('abs-note').value='';document.getElementById('mo-absence').classList.add('on');};
-window.saveAbsence=async function(){const tech=document.getElementById('abs-tech').value;const type=document.getElementById('abs-type').value;const debut=document.getElementById('abs-debut').value;const fin=document.getElementById('abs-fin').value;const note=document.getElementById('abs-note').value.trim();if(!debut||!fin){toast('⚠ Dates requises',true);return;}await push(ref(db,'absences'),{tech,type,debut,fin,note});closeModal('mo-absence');toast('✓ Absence enregistrée');};
-window.delAbsence=async function(key){if(!confirm('Supprimer ?'))return;await remove(ref(db,'absences/'+key));toast('Absence supprimée');};
-window.exportCSV=function(){const arr=ca();const h=['Client','Adresse','Nature','Assigné','Début','Fin','Facturé HT','Heures MO','Coût MO','Matériel','Commandes','Total dépenses','Marge','Statut'];const rows=arr.map(c=>[c.client,c.adresse,c.nature,c.tech,c.debut,c.fin,(c.facture||0).toFixed(2),(c.heures||0).toFixed(1),cmo(c).toFixed(2),(c.materiel||0).toFixed(2),sd(c).toFixed(2),td(c).toFixed(2),mg(c).toFixed(2),c.statut].map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(';'));const csv=[h.map(x=>'"'+x+'"').join(';'),...rows].join('\n');const blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='kalisma_'+new Date().toISOString().slice(0,10)+'.csv';a.click();URL.revokeObjectURL(url);toast('✓ Export CSV');};
-window.exportICS=function(){const arr=ca();let ics='BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Kalisma//FR\nCALSCALE:GREGORIAN\n';arr.forEach(c=>{const ds=c.debut.replace(/-/g,'');const de=(()=>{const d=new Date(c.fin+'T12:00:00');d.setDate(d.getDate()+1);return d.toISOString().slice(0,10).replace(/-/g,'');})();ics+='BEGIN:VEVENT\nUID:kalisma-'+c._key+'@kalisma\nDTSTART;VALUE=DATE:'+ds+'\nDTEND;VALUE=DATE:'+de+'\nSUMMARY:['+c.tech+'] '+c.nature+' – '+c.client+'\nLOCATION:'+c.adresse+'\nEND:VEVENT\n';});ics+='END:VCALENDAR';const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='kalisma_planning.ics';a.click();URL.revokeObjectURL(url);toast('✓ ICS exporté');};
+
+window.confirmDel=async function(key){
+  if(!confirm('Supprimer définitivement ce chantier ?'))return;
+  await remove(ref(db,'chantiers/'+key));
+  closeModal('mo-detail');toast('Chantier supprimé');
+};
+
+window.addDepense=async function(key){
+  const desc=document.getElementById('dep-desc').value.trim();
+  const amt=parseFloat(document.getElementById('dep-amt').value);
+  const date=document.getElementById('dep-date').value;
+  if(!desc||!amt||amt<=0){toast('⚠ Remplissez description et montant',true);return;}
+  await push(ref(db,'chantiers/'+key+'/depenses'),{date,desc,montant:amt});
+  toast('✓ Dépense ajoutée');
+  setTimeout(()=>openDetail(key),400);
+};
+
+window.delDepense=async function(k,dk){
+  await remove(ref(db,'chantiers/'+k+'/depenses/'+dk));
+  setTimeout(()=>openDetail(k),400);
+};
+
+window.openAddChantier=function(){
+  const today=new Date().toISOString().slice(0,10);
+  document.getElementById('mo-chantier-title').textContent='Nouveau chantier';
+  document.getElementById('f-debut').value=today;
+  document.getElementById('f-fin').value=today;
+  document.getElementById('f-adresse').value='';
+  document.getElementById('f-facture').value='0';
+  document.getElementById('f-heures').value='8';
+  document.getElementById('f-demi').value='';
+  document.getElementById('f-nature-sel').value=NATURES[0];
+  document.getElementById('f-nature-other').style.display='none';
+  document.getElementById('f-charge').value='';
+  document.getElementById('f-charge-tel').value='';
+  document.getElementById('f-contact').value='';
+  document.getElementById('f-contact-tel').value='';
+  document.getElementById('f-acces').value='';
+  const sel=document.getElementById('f-tech');
+  sel.innerHTML=ta().filter(t=>t.actif).map(t=>'<option value="'+t.id+'">'+t.nom+'</option>').join('');
+  document.getElementById('mo-chantier').classList.add('on');
+};
+
+window.toggleNature=function(){
+  const s=document.getElementById('f-nature-sel'),b=document.getElementById('f-nature-other');
+  if(s&&b)b.style.display=s.value==='autre'?'block':'none';
+};
+
+window.saveChantier=async function(){
+  const adr=document.getElementById('f-adresse').value.trim();
+  if(!adr){toast('⚠ Adresse requise',true);return;}
+  const ns=document.getElementById('f-nature-sel').value;
+  const nat=ns==='autre'?(document.getElementById('f-nature-text').value.trim()||'Travaux'):ns;
+  await push(ref(db,'chantiers'),{
+    client:document.getElementById('f-client').value,
+    adresse:adr,nature:nat,
+    tech:document.getElementById('f-tech').value,
+    debut:document.getElementById('f-debut').value,
+    fin:document.getElementById('f-fin').value,
+    demi:document.getElementById('f-demi').value||null,
+    facture:parseFloat(document.getElementById('f-facture').value)||0,
+    heures:parseFloat(document.getElementById('f-heures').value)||8,
+    charge:document.getElementById('f-charge').value.trim(),
+    chargeTel:document.getElementById('f-charge-tel').value.trim(),
+    contact:document.getElementById('f-contact').value.trim(),
+    contactTel:document.getElementById('f-contact-tel').value.trim(),
+    acces:document.getElementById('f-acces').value.trim(),
+    statut:'En cours',materiels:{},depenses:{},
+  });
+  closeModal('mo-chantier');toast('✓ Chantier ajouté');
+};
+
+window.openAddTechModal=function(){
+  document.getElementById('new-tech-nom').value='';
+  document.getElementById('new-tech-taux').value='';
+  document.getElementById('mo-add-tech').classList.add('on');
+};
+
+window.saveTechnicien=async function(){
+  const nom=document.getElementById('new-tech-nom').value.trim().toUpperCase();
+  if(!nom){toast('⚠ Nom requis',true);return;}
+  if(DB.techniciens[nom]){toast('⚠ Ce technicien existe déjà',true);return;}
+  const taux=parseFloat(document.getElementById('new-tech-taux').value)||0;
+  await set(ref(db,'techniciens/'+nom),{id:nom,nom,taux,actif:true});
+  closeModal('mo-add-tech');toast('✓ '+nom+' ajouté');
+};
+
+window.openAbsenceModal=function(){
+  const sel=document.getElementById('abs-tech');
+  sel.innerHTML=ta().filter(t=>t.actif).map(t=>'<option value="'+t.id+'">'+t.nom+'</option>').join('');
+  const today=new Date().toISOString().slice(0,10);
+  document.getElementById('abs-debut').value=today;
+  document.getElementById('abs-fin').value=today;
+  document.getElementById('abs-note').value='';
+  document.getElementById('mo-absence').classList.add('on');
+};
+
+window.saveAbsence=async function(){
+  const tech=document.getElementById('abs-tech').value;
+  const type=document.getElementById('abs-type').value;
+  const debut=document.getElementById('abs-debut').value;
+  const fin=document.getElementById('abs-fin').value;
+  const note=document.getElementById('abs-note').value.trim();
+  if(!debut||!fin){toast('⚠ Dates requises',true);return;}
+  await push(ref(db,'absences'),{tech,type,debut,fin,note});
+  closeModal('mo-absence');toast('✓ Absence enregistrée');
+};
+
+window.delAbsence=async function(key){
+  if(!confirm('Supprimer cette absence ?'))return;
+  await remove(ref(db,'absences/'+key));
+  toast('Absence supprimée');
+};
+
+window.exportCSV=function(){
+  const arr=ca();
+  const h=['Client','Adresse','Nature','Assigné','Début','Fin','Facturé HT','Heures MO','Coût MO','Matériel BPU','Dépenses','Total','Marge','Statut'];
+  const rows=arr.map(c=>[c.client,c.adresse,c.nature,c.tech,c.debut,c.fin,(c.facture||0).toFixed(2),(c.heures||0).toFixed(1),cmo(c).toFixed(2),sm(c).toFixed(2),sd(c).toFixed(2),td(c).toFixed(2),mg(c).toFixed(2),c.statut].map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(';'));
+  const csv=[h.map(x=>'"'+x+'"').join(';'),...rows].join('\n');
+  const blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;a.download='kalisma_'+new Date().toISOString().slice(0,10)+'.csv';a.click();URL.revokeObjectURL(url);toast('✓ Export CSV');
+};
+
+window.exportICS=function(){
+  const arr=ca();
+  let ics='BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Kalisma//FR\nCALSCALE:GREGORIAN\n';
+  arr.forEach(c=>{
+    const ds=c.debut.replace(/-/g,'');
+    const de=(()=>{const d=new Date(c.fin+'T12:00:00');d.setDate(d.getDate()+1);return d.toISOString().slice(0,10).replace(/-/g,'');})();
+    ics+='BEGIN:VEVENT\nUID:kalisma-'+c._key+'@kalisma\nDTSTART;VALUE=DATE:'+ds+'\nDTEND;VALUE=DATE:'+de+'\nSUMMARY:['+c.tech+'] '+c.nature+' – '+c.client+'\nLOCATION:'+c.adresse+'\nEND:VEVENT\n';
+  });
+  ics+='END:VCALENDAR';
+  const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;a.download='kalisma_planning.ics';a.click();URL.revokeObjectURL(url);toast('✓ ICS exporté');
+};
+
 window.closeModal=function(id){document.getElementById(id).classList.remove('on');};
-window.toast=function(msg,err=false){const t=document.getElementById('toast');t.textContent=msg;t.className='toast '+(err?'err':'ok')+' on';setTimeout(()=>t.classList.remove('on'),2400);};
+window.toast=function(msg,err=false){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.className='toast '+(err?'err':'ok')+' on';
+  setTimeout(()=>t.classList.remove('on'),2400);
+};
 document.querySelectorAll('.mo').forEach(o=>o.addEventListener('click',e=>{if(e.target===o)o.classList.remove('on');}));
 document.getElementById('lp').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin();});
 initDB();
+filterBPU();
 </script>
 </body>
 </html>
