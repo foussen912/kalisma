@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habilitations Électriques – Kalisma</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   KALISMA – MODULE HABILITATIONS ÉLECTRIQUES
+   NF C 18-510 + A1/A2 (obligatoire depuis oct. 2024)
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bleu:       #0a1628;
+  --bleu-mid:   #142240;
+  --bleu-light: #1a2f50;
+  --gold:       #e8b84b;
+  --gold-light: #f5d080;
+  --gold-dim:   rgba(232,184,75,0.15);
+  --rouge:      #e05252;
+  --vert:       #4caf82;
+  --blanc:      #f0f4f8;
+  --gris:       #7a8fa6;
+  --gris-dark:  #4a5a6a;
+  --border:     rgba(232,184,75,0.18);
+  --shadow:     0 24px 64px rgba(0,0,0,0.6);
+}
+
+/* ---- LAYOUT ---- */
+body {
+  background: #080f1c;
+  font-family: 'Barlow', sans-serif;
+  min-height: 100vh;
+  color: var(--blanc);
+}
+
+/* ---- TOPBAR ---- */
+.topbar {
+  background: linear-gradient(90deg, #060e1a, #0f1e36, #060e1a);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.topbar .logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.topbar .module-title {
+  font-size: 0.68rem;
+  color: var(--gris);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-left: 1px solid var(--border);
+  padding-left: 20px;
+}
+.topbar .norm-badge {
+  margin-left: auto;
+  background: var(--gold-dim);
+  border: 1px solid var(--border);
+  color: var(--gold);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+/* ---- MAIN GRID ---- */
+.main {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: calc(100vh - 56px);
+}
+
+/* ---- SIDEBAR ---- */
+.sidebar {
+  background: #0a1422;
+  border-right: 1px solid var(--border);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+}
+.sidebar-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  padding: 0 4px 8px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-add-tech {
+  background: var(--gold);
+  color: var(--bleu);
+  border: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-add-tech:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+/* Technicien card in sidebar */
+.tech-item {
+  background: var(--bleu-mid);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative;
+}
+.tech-item:hover { border-color: var(--border); background: var(--bleu-light); }
+.tech-item.active { border-color: var(--gold); background: var(--bleu-light); }
+.tech-item .ti-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.tech-item .ti-poste {
+  font-size: 0.67rem;
+  color: var(--gris);
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+.tech-item .ti-habs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+.tech-item .ti-hab {
+  background: var(--gold-dim);
+  border: 1px solid rgba(232,184,75,0.25);
+  color: var(--gold-light);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 3px;
+}
+.tech-item .ti-status {
+  position: absolute;
+  top: 10px; right: 12px;
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  color: var(--vert);
+  text-transform: uppercase;
+}
+.tech-item .ti-status.expired { color: var(--rouge); }
+.tech-item .ti-status.soon { color: var(--gold); }
+.tech-delete {
+  position: absolute;
+  bottom: 8px; right: 10px;
+  background: none;
+  border: none;
+  color: var(--gris-dark);
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 2px 5px;
+  border-radius: 3px;
+  transition: color 0.2s;
+}
+.tech-delete:hover { color: var(--rouge); }
+
+/* ---- CONTENT AREA ---- */
+.content {
+  padding: 28px 32px;
+  overflow-y: auto;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+}
+.tab {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gris);
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -1px;
+}
+.tab:hover { color: var(--blanc); }
+.tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+/* ---- FORM PANEL ---- */
+.form-section {
+  display: none;
+}
+.form-section.visible { display: block; }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group.full { grid-column: 1 / -1; }
+.form-group.third { grid-column: span 1; }
+
+label.lbl {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gris);
+  font-weight: 600;
+}
+input[type="text"], input[type="date"], select, textarea {
+  background: #0d1a2e;
+  border: 1px solid #1e3050;
+  color: var(--blanc);
+  padding: 10px 14px;
+  border-radius: 7px;
+  font-size: 0.88rem;
+  font-family: 'Barlow', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--gold); }
+select option { background: #0d1a2e; }
+textarea { resize: vertical; min-height: 70px; }
+
+/* Habilitations checkboxes */
+.hab-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 8px;
+}
+.hab-option {
+  position: relative;
+}
+.hab-option input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0; height: 0;
+}
+.hab-option label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background: #0d1a2e;
+  border: 1px solid #1e3050;
+  border-radius: 8px;
+  padding: 10px 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+}
+.hab-option label:hover { border-color: rgba(232,184,75,0.4); background: #142240; }
+.hab-option input:checked + label {
+  background: var(--gold-dim);
+  border-color: var(--gold);
+}
+.hab-option label .hab-code {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+}
+.hab-option input:checked + label .hab-code { color: var(--gold-light); }
+.hab-option label .hab-desc {
+  font-size: 0.55rem;
+  color: var(--gris);
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+}
+
+/* Photo upload */
+.photo-drop {
+  background: #0d1a2e;
+  border: 2px dashed #1e3050;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative;
+}
+.photo-drop:hover { border-color: var(--gold); background: #142240; }
+.photo-drop input[type="file"] {
+  position: absolute; inset: 0; opacity: 0; cursor: pointer;
+}
+.photo-drop .pd-preview {
+  width: 72px; height: 72px; border-radius: 50%;
+  object-fit: cover; border: 2px solid var(--gold);
+  display: none; margin: 0 auto 8px;
+}
+.photo-drop .pd-icon { font-size: 2rem; margin-bottom: 6px; }
+.photo-drop .pd-text { font-size: 0.75rem; color: var(--gris); line-height: 1.5; }
+
+/* Save button */
+.btn-save {
+  background: var(--gold);
+  color: var(--bleu);
+  border: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 13px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-save:hover { background: var(--gold-light); transform: translateY(-1px); }
+.btn-save.secondary {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 0.82rem;
+  padding: 10px 22px;
+}
+.btn-save.secondary:hover { background: var(--gold-dim); }
+.btn-save.danger {
+  background: transparent;
+  border: 1px solid var(--rouge);
+  color: var(--rouge);
+  font-size: 0.82rem;
+  padding: 10px 22px;
+}
+.btn-save.danger:hover { background: rgba(224,82,82,0.1); }
+
+.btn-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/* Section headings */
+.section-h {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  margin-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ---- CARD PREVIEW ---- */
+.preview-section { display: none; }
+.preview-section.visible { display: block; }
+
+.preview-label {
+  font-size: 0.65rem;
+  color: var(--gris);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 14px;
+  text-align: center;
+}
+.cards-preview {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+/* ---- CARD STYLES ---- */
+.card {
+  width: 340px;
+  height: 210px;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Barlow', sans-serif;
+  box-shadow: var(--shadow);
+  flex-shrink: 0;
+}
+.card-recto {
+  background: linear-gradient(135deg, #0a1628 0%, #142240 60%, #0e1d36 100%);
+}
+.card-recto::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(-55deg, transparent, transparent 18px, rgba(232,184,75,0.04) 18px, rgba(232,184,75,0.04) 19px);
+  pointer-events: none;
+}
+.card .bar-left {
+  position: absolute; left: 0; top: 0; bottom: 0; width: 7px;
+  background: linear-gradient(180deg, var(--gold) 0%, #b8860b 100%);
+  border-radius: 14px 0 0 14px;
+}
+.card-verso .bar-left {
+  background: linear-gradient(180deg, #b8860b 0%, var(--gold) 100%);
+}
+.card .bar-bottom {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 5px;
+  background: linear-gradient(90deg, var(--gold), #b8860b, var(--gold));
+  border-radius: 0 0 14px 14px;
+}
+.card .header-strip {
+  position: absolute; top: 0; left: 7px; right: 0; height: 44px;
+  background: rgba(232,184,75,0.10);
+  border-bottom: 1px solid rgba(232,184,75,0.2);
+  display: flex; align-items: center; padding: 0 14px; gap: 10px;
+}
+.card .logo-text {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.05rem; font-weight: 700;
+  color: var(--gold); letter-spacing: 0.1em;
+}
+.card .title-hab {
+  margin-left: auto;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.55rem; font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.15em; text-transform: uppercase;
+  text-align: right; line-height: 1.4;
+}
+.card .photo-zone {
+  position: absolute; top: 56px; left: 22px;
+  width: 68px; height: 82px;
+  border-radius: 6px;
+  background: #0a1628;
+  border: 2px solid var(--gold);
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.card .photo-zone img { width: 100%; height: 100%; object-fit: cover; }
+.card .photo-zone .no-photo { font-size: 2rem; color: rgba(255,255,255,0.15); }
+.card .info-zone {
+  position: absolute; top: 56px; left: 104px; right: 14px;
+}
+.card .c-nom {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.28rem; font-weight: 800;
+  color: #fff; text-transform: uppercase;
+  letter-spacing: 0.05em; line-height: 1; margin-bottom: 3px;
+}
+.card .c-prenom {
+  font-size: 0.78rem; color: var(--gold-light);
+  letter-spacing: 0.08em; margin-bottom: 10px;
+}
+.card .c-badge {
+  display: inline-block;
+  background: var(--gold); color: var(--bleu);
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.88rem; font-weight: 700;
+  letter-spacing: 0.1em; padding: 2px 10px;
+  border-radius: 4px; margin-bottom: 7px;
+}
+.card .c-poste {
+  font-size: 0.65rem; color: rgba(255,255,255,0.5);
+  text-transform: uppercase; letter-spacing: 0.12em;
+}
+.card .bottom-info {
+  position: absolute; bottom: 12px; left: 22px; right: 14px;
+  display: flex; gap: 16px;
+}
+.card .bi { display: flex; flex-direction: column; gap: 1px; }
+.card .bi-lbl { font-size: 0.52rem; color: var(--gris); text-transform: uppercase; letter-spacing: 0.1em; }
+.card .bi-val { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 600; color: var(--gold); }
+.card .decor1 { position: absolute; right: -30px; bottom: -30px; width: 120px; height: 120px; border-radius: 50%; border: 18px solid rgba(232,184,75,0.07); pointer-events: none; }
+.card .decor2 { position: absolute; right: 10px; bottom: 20px; width: 60px; height: 60px; border-radius: 50%; border: 8px solid rgba(232,184,75,0.05); pointer-events: none; }
+/* VERSO */
+.card-verso { background: linear-gradient(135deg, #0e1d36 0%, #142240 100%); }
+.card-verso .verso-hdr {
+  position: absolute; top: 0; left: 7px; right: 0; height: 36px;
+  background: rgba(232,184,75,0.10);
+  border-bottom: 1px solid rgba(232,184,75,0.15);
+  display: flex; align-items: center; padding: 0 14px;
+}
+.card-verso .verso-hdr span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.58rem; font-weight: 700;
+  color: rgba(255,255,255,0.45); letter-spacing: 0.16em; text-transform: uppercase;
+}
+.card-verso .v-body { position: absolute; top: 44px; left: 22px; right: 14px; }
+.card-verso .v-htitle {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.58rem; font-weight: 700;
+  color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 7px;
+}
+.card-verso .hab-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 9px; }
+.card-verso .htag {
+  background: rgba(232,184,75,0.12);
+  border: 1px solid rgba(232,184,75,0.3);
+  color: var(--gold-light);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem; font-weight: 700;
+  padding: 2px 9px; border-radius: 4px;
+}
+.card-verso .v-cond {
+  font-size: 0.55rem; color: rgba(255,255,255,0.32); line-height: 1.55;
+}
+.card-verso .v-footer {
+  position: absolute; bottom: 13px; left: 22px; right: 14px;
+  display: flex; justify-content: space-between; align-items: flex-end;
+}
+.card-verso .v-sig { display: flex; flex-direction: column; gap: 2px; }
+.card-verso .v-sig-line { width: 90px; height: 1px; background: rgba(232,184,75,0.4); margin-bottom: 2px; }
+.card-verso .v-sig-lbl { font-size: 0.52rem; color: var(--gris); letter-spacing: 0.1em; text-transform: uppercase; }
+.card-verso .v-norm {
+  font-size: 0.5rem; color: rgba(232,184,75,0.5); font-weight: 700; letter-spacing: 0.08em; text-align: right; line-height: 1.4;
+}
+
+/* ---- PRINT / DOWNLOAD BUTTONS ---- */
+.action-row {
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+  margin-top: 8px;
+}
+.btn-action {
+  background: transparent;
+  border: 1px solid var(--gold); color: var(--gold);
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 9px 22px; border-radius: 6px; cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-action:hover { background: var(--gold); color: var(--bleu); }
+
+/* ---- EMPTY STATE ---- */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  gap: 16px;
+}
+.empty-state .es-icon { font-size: 3.5rem; }
+.empty-state .es-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.2rem; font-weight: 700;
+  color: var(--gris); letter-spacing: 0.08em;
+}
+.empty-state .es-sub { font-size: 0.8rem; color: var(--gris-dark); max-width: 340px; line-height: 1.6; }
+
+/* ---- TOAST ---- */
+.toast {
+  position: fixed; bottom: 28px; right: 28px;
+  background: #1a3050; border: 1px solid var(--gold);
+  color: var(--gold); font-size: 0.82rem; font-weight: 600;
+  padding: 12px 22px; border-radius: 8px;
+  box-shadow: var(--shadow);
+  transform: translateY(80px); opacity: 0;
+  transition: all 0.3s; z-index: 999;
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+
+/* ---- PRINT ---- */
+@media print {
+  .topbar, .sidebar, .tabs, .form-section, .action-row, .btn-row, .section-h { display: none !important; }
+  body { background: white; }
+  .main { display: block; }
+  .content { padding: 10px; }
+  .preview-section { display: block !important; }
+  .cards-preview { gap: 10px; }
+  .card { box-shadow: none; border: 1px solid #ccc; }
+}
+
+/* ---- MOBILE ---- */
+@media (max-width: 800px) {
+  .main { grid-template-columns: 1fr; }
+  .sidebar { border-right: none; border-bottom: 1px solid var(--border); max-height: 280px; }
+  .content { padding: 16px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .cards-preview { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span class="logo">⚡ Kalisma</span>
+  <span class="module-title">Titres d'Habilitation Électrique</span>
+  <span class="norm-badge">NF C 18-510 · A1/A2 · Oct. 2024</span>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- SIDEBAR : liste techniciens -->
+  <aside class="sidebar">
+    <div class="sidebar-title">
+      <span>Techniciens</span>
+      <button class="btn-add-tech" onclick="newTech()">+ Nouveau</button>
+    </div>
+    <div id="techList"></div>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+    <div id="emptyState" class="empty-state">
+      <div class="es-icon">🪪</div>
+      <div class="es-title">Aucun technicien sélectionné</div>
+      <div class="es-sub">Sélectionnez un technicien dans la liste ou créez-en un nouveau pour éditer et générer son titre d'habilitation électrique.</div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs" id="tabsBar" style="display:none">
+      <div class="tab active" onclick="showTab('form')">✏ Éditer</div>
+      <div class="tab" onclick="showTab('preview')">🪪 Carte</div>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-section visible" id="tabForm">
+
+      <p class="section-h">Identité du titulaire</p>
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="lbl">Nom</label>
+          <input type="text" id="fNom" placeholder="ex : GORY">
+        </div>
+        <div class="form-group">
+          <label class="lbl">Prénom</label>
+          <input type="text" id="fPrenom" placeholder="ex : Kunda">
+        </div>
+        <div class="form-group">
+          <label class="lbl">Poste / Fonction</label>
+          <input type="text" id="fPoste" placeholder="ex : Technicien IRVE" value="Technicien IRVE">
+        </div>
+        <div class="form-group">
+          <label class="lbl">N° de carte</label>
+          <input type="text" id="fNum" placeholder="ex : KAL-2025-001">
+        </div>
+        <div class="form-group">
+          <label class="lbl">Date de délivrance</label>
+          <input type="date" id="fDeliv">
+        </div>
+        <div class="form-group">
+          <label class="lbl">Date d'expiration</label>
+          <input type="date" id="fExp">
+        </div>
+        <div class="form-group full">
+          <label class="lbl">Photo (optionnelle)</label>
+          <div class="photo-drop" id="photoDropZone">
+            <input type="file" accept="image/*" onchange="handleFormPhoto(event)">
+            <img class="pd-preview" id="pdPreview" src="" alt="">
+            <div class="pd-icon" id="pdIcon">📷</div>
+            <div class="pd-text" id="pdText">Cliquez pour ajouter une photo<br><small>JPG, PNG — format portrait recommandé</small></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-h">Habilitations autorisées <span style="color:var(--gris);font-size:0.6rem;font-weight:400;">(NF C 18-510 + A1/A2)</span></p>
+      <div class="hab-selector" id="habSelector">
+        <!-- généré par JS -->
+      </div>
+
+      <div style="margin-top:20px;">
+        <p class="section-h">Conditions particulières <span style="color:var(--gris);font-size:0.6rem;font-weight:400;">(optionnel)</span></p>
+        <textarea id="fConditions" placeholder="Ex : Limité aux chantiers IRVE Île-de-France&#10;Habilitation soumise au port des EPI Arc-Flash&#10;..."></textarea>
+      </div>
+
+      <div class="btn-row" style="margin-top:24px;">
+        <button class="btn-save" onclick="saveTech()">💾 Enregistrer</button>
+        <button class="btn-save secondary" onclick="showTab('preview')">👁 Voir la carte</button>
+        <button class="btn-save danger" id="btnDelete" onclick="deleteTech()" style="display:none">🗑 Supprimer</button>
+      </div>
+    </div>
+
+    <!-- PREVIEW -->
+    <div class="preview-section" id="tabPreview">
+      <p class="preview-label">↓ Recto — Face principale</p>
+      <div class="cards-preview">
+
+        <!-- RECTO -->
+        <div class="card card-recto" id="previewRecto">
+          <div class="bar-left"></div>
+          <div class="bar-bottom"></div>
+          <div class="header-strip">
+            <span class="logo-text">KALISMA</span>
+            <span class="title-hab">TITRE D'HABILITATION<br>ÉLECTRIQUE</span>
+          </div>
+          <div class="photo-zone" id="pPhotoZone">
+            <span class="no-photo">👤</span>
+          </div>
+          <div class="info-zone">
+            <div class="c-nom" id="pNom">NOM</div>
+            <div class="c-prenom" id="pPrenom">Prénom</div>
+            <div class="c-badge" id="pBadge">—</div>
+            <div class="c-poste" id="pPoste">Fonction</div>
+          </div>
+          <div class="bottom-info">
+            <div class="bi"><span class="bi-lbl">N° Carte</span><span class="bi-val" id="pNum">—</span></div>
+            <div class="bi"><span class="bi-lbl">Délivrée le</span><span class="bi-val" id="pDeliv">—</span></div>
+            <div class="bi"><span class="bi-lbl">Valide jusqu'au</span><span class="bi-val" id="pExp">—</span></div>
+          </div>
+          <div class="decor1"></div>
+          <div class="decor2"></div>
+        </div>
+
+        <!-- VERSO -->
+        <div class="card card-verso" id="previewVerso">
+          <div class="bar-left"></div>
+          <div class="bar-bottom"></div>
+          <div class="verso-hdr"><span>Habilitations autorisées — Conditions d'exercice</span></div>
+          <div class="v-body">
+            <div class="v-htitle">Domaines habilités</div>
+            <div class="hab-tags" id="pHabTags"></div>
+            <div class="v-cond" id="pCond"></div>
+          </div>
+          <div class="v-footer">
+            <div class="v-sig">
+              <div class="v-sig-line"></div>
+              <div class="v-sig-lbl">F. Doucouré — Gérant Kalisma</div>
+            </div>
+            <div class="v-norm">NF C 18-510<br>A1/A2 · Oct. 2024</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="action-row">
+        <button class="btn-action" onclick="window.print()">🖨 Imprimer</button>
+        <button class="btn-action" onclick="downloadPNG('previewRecto', 'recto')">⬇ PNG Recto</button>
+        <button class="btn-action" onclick="downloadPNG('previewVerso', 'verso')">⬇ PNG Verso</button>
+        <button class="btn-action" onclick="showTab('form')" style="border-color:var(--gris);color:var(--gris);">✏ Modifier</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ============================================================
+//  DATA — Liste des habilitations NF C 18-510 + A1/A2
+// ============================================================
+const HAB_LIST = [
+  { code: 'B0',   desc: 'Non élec. BT\nvoisinage simple' },
+  { code: 'B0V',  desc: 'Non élec. BT\nvoisinage renforcé' },
+  { code: 'B1',   desc: 'Exécutant\ntravaux BT' },
+  { code: 'B1V',  desc: 'Exécutant BT\nvoisinage renforcé' },
+  { code: 'B2',   desc: 'Chargé\ntravaux BT' },
+  { code: 'B2V',  desc: 'Chargé travaux BT\nvoisinage renforcé' },
+  { code: 'BR',   desc: 'Interventions\ngénérales BT' },
+  { code: 'BC',   desc: 'Chargé de\nconsignation BT' },
+  { code: 'BS',   desc: 'Interventions\nélémentaires BT' },
+  { code: 'BE',   desc: 'Opérations\nspécifiques BT' },
+  { code: 'BP',   desc: 'Photovoltaïque\nBT/HTA' },
+  { code: 'BF',   desc: 'Fouilles\n(nouveau A2)' },
+  { code: 'H0',   desc: 'Non élec. HT\nvoisinage simple' },
+  { code: 'H0V',  desc: 'Non élec. HT\nvoisinage renforcé' },
+  { code: 'H1',   desc: 'Exécutant\ntravaux HT' },
+  { code: 'H1V',  desc: 'Exécutant HT\nvoisinage renforcé' },
+  { code: 'H2',   desc: 'Chargé\ntravaux HT' },
+  { code: 'H2V',  desc: 'Chargé travaux HT\nvoisinage renforcé' },
+  { code: 'HR',   desc: 'Interventions\ngénérales HT' },
+  { code: 'HC',   desc: 'Chargé de\nconsignation HT' },
+  { code: 'HF',   desc: 'Fouilles HT\n(nouveau A2)' },
+];
+
+// ============================================================
+//  STATE
+// ============================================================
+const STORAGE_KEY = 'kalisma_habilitations_v2';
+let techs = [];
+let currentId = null;
+let currentPhoto = null; // base64
+
+function loadData() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) techs = JSON.parse(raw);
+  } catch(e) { techs = []; }
+  // Pré-charger Kunda et Pape si vide
+  if (techs.length === 0) {
+    techs = [
+      { id: 'kunda', nom: 'GORY', prenom: 'Kunda', poste: 'Technicien IRVE', num: 'KAL-2025-001', deliv: '2025-01-01', exp: '2027-12-31', habs: ['B2V','H0','BS','BR'], conditions: 'IRVE – Infrastructures de Recharge Véhicules Électriques\nRespect obligatoire des EPI réglementaires\nZone Île-de-France', photo: null },
+      { id: 'pape',  nom: 'DIALLO', prenom: 'Pape',  poste: 'Technicien IRVE', num: 'KAL-2025-002', deliv: '2025-01-01', exp: '2027-12-31', habs: ['B2V','H0','BS','BR'], conditions: 'IRVE – Infrastructures de Recharge Véhicules Électriques\nRespect obligatoire des EPI réglementaires\nZone Île-de-France', photo: null },
+    ];
+    saveData();
+  }
+}
+
+function saveData() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(techs));
+}
+
+// ============================================================
+//  BUILD CHECKBOX LIST
+// ============================================================
+function buildHabSelector() {
+  const el = document.getElementById('habSelector');
+  el.innerHTML = HAB_LIST.map(h => `
+    <div class="hab-option">
+      <input type="checkbox" id="hab_${h.code}" value="${h.code}">
+      <label for="hab_${h.code}">
+        <span class="hab-code">${h.code}</span>
+        <span class="hab-desc">${h.desc.replace(/\n/g,'<br>')}</span>
+      </label>
+    </div>
+  `).join('');
+}
+
+// ============================================================
+//  RENDER SIDEBAR
+// ============================================================
+function renderSidebar() {
+  const el = document.getElementById('techList');
+  if (techs.length === 0) {
+    el.innerHTML = '<div style="color:var(--gris);font-size:0.75rem;padding:12px 4px;text-align:center;">Aucun technicien.<br>Cliquez sur "+ Nouveau".</div>';
+    return;
+  }
+  el.innerHTML = techs.map(t => {
+    const status = getStatus(t.exp);
+    return `
+    <div class="tech-item ${t.id === currentId ? 'active' : ''}" onclick="selectTech('${t.id}')">
+      <div class="ti-name">${t.nom} ${t.prenom}</div>
+      <div class="ti-poste">${t.poste || '—'}</div>
+      <div class="ti-habs">${(t.habs||[]).map(h=>`<span class="ti-hab">${h}</span>`).join('')}</div>
+      <span class="ti-status ${status.cls}">${status.txt}</span>
+      <button class="tech-delete" onclick="event.stopPropagation();confirmDelete('${t.id}')" title="Supprimer">✕</button>
+    </div>`;
+  }).join('');
+}
+
+function getStatus(expDate) {
+  if (!expDate) return { cls: '', txt: '' };
+  const now = new Date();
+  const exp = new Date(expDate);
+  const diff = (exp - now) / (1000*60*60*24);
+  if (diff < 0) return { cls: 'expired', txt: '⚠ Expiré' };
+  if (diff < 90) return { cls: 'soon', txt: '⏳ Bientôt' };
+  return { cls: '', txt: '✓ Valide' };
+}
+
+// ============================================================
+//  SELECT / NEW TECH
+// ============================================================
+function selectTech(id) {
+  currentId = id;
+  const t = techs.find(x => x.id === id);
+  if (!t) return;
+  currentPhoto = t.photo || null;
+
+  // Remplir le form
+  document.getElementById('fNom').value    = t.nom    || '';
+  document.getElementById('fPrenom').value = t.prenom || '';
+  document.getElementById('fPoste').value  = t.poste  || '';
+  document.getElementById('fNum').value    = t.num    || '';
+  document.getElementById('fDeliv').value  = t.deliv  || '';
+  document.getElementById('fExp').value    = t.exp    || '';
+  document.getElementById('fConditions').value = t.conditions || '';
+
+  // Photo
+  const prev = document.getElementById('pdPreview');
+  if (t.photo) {
+    prev.src = t.photo;
+    prev.style.display = 'block';
+    document.getElementById('pdIcon').style.display = 'none';
+    document.getElementById('pdText').textContent = '✓ Photo chargée';
+  } else {
+    prev.style.display = 'none';
+    document.getElementById('pdIcon').style.display = 'block';
+    document.getElementById('pdText').innerHTML = 'Cliquez pour ajouter une photo<br><small>JPG, PNG</small>';
+  }
+
+  // Habilitations
+  HAB_LIST.forEach(h => {
+    const cb = document.getElementById('hab_' + h.code);
+    if (cb) cb.checked = (t.habs || []).includes(h.code);
+  });
+
+  document.getElementById('btnDelete').style.display = 'inline-flex';
+  showUI();
+  renderSidebar();
+  updatePreview();
+}
+
+function newTech() {
+  currentId = 'new_' + Date.now();
+  currentPhoto = null;
+
+  document.getElementById('fNom').value    = '';
+  document.getElementById('fPrenom').value = '';
+  document.getElementById('fPoste').value  = 'Technicien IRVE';
+  document.getElementById('fNum').value    = autoNum();
+  document.getElementById('fDeliv').value  = today();
+  document.getElementById('fExp').value    = threeYears();
+  document.getElementById('fConditions').value = 'IRVE – Infrastructures de Recharge Véhicules Électriques\nRespect obligatoire des EPI réglementaires';
+
+  const prev = document.getElementById('pdPreview');
+  prev.style.display = 'none';
+  document.getElementById('pdIcon').style.display = 'block';
+  document.getElementById('pdText').innerHTML = 'Cliquez pour ajouter une photo<br><small>JPG, PNG</small>';
+
+  HAB_LIST.forEach(h => {
+    const cb = document.getElementById('hab_' + h.code);
+    if (cb) cb.checked = false;
+  });
+
+  document.getElementById('btnDelete').style.display = 'none';
+  showUI();
+  showTab('form');
+  renderSidebar();
+}
+
+function showUI() {
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('tabsBar').style.display = 'flex';
+}
+
+// ============================================================
+//  SAVE
+// ============================================================
+function saveTech() {
+  const nom    = document.getElementById('fNom').value.trim().toUpperCase();
+  const prenom = document.getElementById('fPrenom').value.trim();
+  if (!nom || !prenom) { toast('⚠ Nom et prénom requis'); return; }
+
+  const habs = HAB_LIST
+    .filter(h => document.getElementById('hab_' + h.code)?.checked)
+    .map(h => h.code);
+
+  const obj = {
+    id:         currentId,
+    nom, prenom,
+    poste:      document.getElementById('fPoste').value.trim(),
+    num:        document.getElementById('fNum').value.trim(),
+    deliv:      document.getElementById('fDeliv').value,
+    exp:        document.getElementById('fExp').value,
+    habs,
+    conditions: document.getElementById('fConditions').value.trim(),
+    photo:      currentPhoto,
+  };
+
+  const idx = techs.findIndex(t => t.id === currentId);
+  if (idx >= 0) techs[idx] = obj;
+  else techs.push(obj);
+
+  saveData();
+  renderSidebar();
+  document.getElementById('btnDelete').style.display = 'inline-flex';
+  toast('✓ Enregistré');
+  updatePreview();
+  showTab('preview');
+}
+
+// ============================================================
+//  DELETE
+// ============================================================
+function confirmDelete(id) {
+  if (confirm('Supprimer ce technicien ?')) {
+    techs = techs.filter(t => t.id !== id);
+    saveData();
+    if (currentId === id) {
+      currentId = null;
+      document.getElementById('emptyState').style.display = 'flex';
+      document.getElementById('tabsBar').style.display = 'none';
+      document.getElementById('tabForm').classList.add('visible');
+      document.getElementById('tabPreview').classList.remove('visible');
+    }
+    renderSidebar();
+    toast('🗑 Supprimé');
+  }
+}
+function deleteTech() { confirmDelete(currentId); }
+
+// ============================================================
+//  TABS
+// ============================================================
+function showTab(name) {
+  document.querySelectorAll('.tab').forEach((t,i) => {
+    t.classList.toggle('active', (i===0 && name==='form') || (i===1 && name==='preview'));
+  });
+  document.getElementById('tabForm').style.display    = name === 'form'    ? 'block' : 'none';
+  document.getElementById('tabPreview').style.display = name === 'preview' ? 'block' : 'none';
+  if (name === 'preview') updatePreview();
+}
+
+// ============================================================
+//  PHOTO
+// ============================================================
+function handleFormPhoto(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const r = new FileReader();
+  r.onload = ev => {
+    currentPhoto = ev.target.result;
+    const prev = document.getElementById('pdPreview');
+    prev.src = currentPhoto;
+    prev.style.display = 'block';
+    document.getElementById('pdIcon').style.display = 'none';
+    document.getElementById('pdText').textContent = '✓ Photo chargée';
+    updatePreview();
+  };
+  r.readAsDataURL(file);
+}
+
+// ============================================================
+//  UPDATE CARD PREVIEW
+// ============================================================
+function updatePreview() {
+  const t = techs.find(x => x.id === currentId);
+  if (!t) return;
+
+  const nom    = document.getElementById('fNom').value.trim().toUpperCase()   || t.nom    || 'NOM';
+  const prenom = document.getElementById('fPrenom').value.trim()              || t.prenom || 'Prénom';
+  const poste  = document.getElementById('fPoste').value.trim()               || t.poste  || '—';
+  const num    = document.getElementById('fNum').value.trim()                 || t.num    || '—';
+  const deliv  = document.getElementById('fDeliv').value                      || t.deliv  || '';
+  const exp    = document.getElementById('fExp').value                        || t.exp    || '';
+
+  const habs = HAB_LIST
+    .filter(h => document.getElementById('hab_' + h.code)?.checked)
+    .map(h => h.code);
+  const cond = document.getElementById('fConditions').value.trim();
+
+  document.getElementById('pNom').textContent    = nom;
+  document.getElementById('pPrenom').textContent = prenom;
+  document.getElementById('pPoste').textContent  = poste;
+  document.getElementById('pNum').textContent    = num;
+  document.getElementById('pDeliv').textContent  = fmtDate(deliv);
+  document.getElementById('pExp').textContent    = fmtDate(exp);
+  document.getElementById('pBadge').textContent  = habs[0] || '—';
+
+  // Photo
+  const pz = document.getElementById('pPhotoZone');
+  pz.innerHTML = '';
+  if (currentPhoto) {
+    const img = document.createElement('img');
+    img.src = currentPhoto;
+    img.style.cssText = 'width:100%;height:100%;object-fit:cover;';
+    pz.appendChild(img);
+  } else {
+    pz.innerHTML = '<span class="no-photo">👤</span>';
+  }
+
+  // Hab tags
+  const tagsEl = document.getElementById('pHabTags');
+  tagsEl.innerHTML = habs.map(h => `<span class="htag">${h}</span>`).join('') || '<span style="color:var(--gris);font-size:0.7rem;">Aucune habilitation sélectionnée</span>';
+
+  // Conditions
+  const condEl = document.getElementById('pCond');
+  const defaultCond = '• Respect obligatoire NF C 18-510 + A1/A2 (oct. 2024)\n• Port des EPI réglementaires obligatoire\n• Ce titre est personnel et incessible';
+  const condText = cond ? cond.split('\n').map(l=>'• '+l).join('\n') : defaultCond;
+  condEl.innerHTML = condText.replace(/\n/g,'<br>');
+}
+
+// ============================================================
+//  DOWNLOAD PNG
+// ============================================================
+async function downloadPNG(elemId, side) {
+  const loadScript = () => new Promise(res => {
+    if (window.html2canvas) return res();
+    const s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+    s.onload = res;
+    document.head.appendChild(s);
+  });
+  await loadScript();
+  const el = document.getElementById(elemId);
+  const canvas = await html2canvas(el, { scale: 3, backgroundColor: null });
+  const a = document.createElement('a');
+  const t = techs.find(x => x.id === currentId);
+  const name = t ? `${t.nom}-${t.prenom}` : 'technicien';
+  a.href = canvas.toDataURL('image/png');
+  a.download = `habilitation-${name}-${side}.png`;
+  a.click();
+  toast('⬇ Téléchargement en cours...');
+}
+
+// ============================================================
+//  UTILS
+// ============================================================
+function fmtDate(str) {
+  if (!str) return '—';
+  const [y,m,d] = str.split('-');
+  return `${d}/${m}/${y}`;
+}
+function today() {
+  return new Date().toISOString().slice(0,10);
+}
+function threeYears() {
+  const d = new Date();
+  d.setFullYear(d.getFullYear() + 3);
+  return d.toISOString().slice(0,10);
+}
+function autoNum() {
+  const year = new Date().getFullYear();
+  const n = (techs.length + 1).toString().padStart(3, '0');
+  return `KAL-${year}-${n}`;
+}
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2800);
+}
+
+// ============================================================
+//  INIT
+// ============================================================
+buildHabSelector();
+loadData();
+renderSidebar();
+
+// Sélectionner Kunda par défaut
+if (techs.length > 0) {
+  selectTech(techs[0].id);
+}
+
+// Tabs init
+document.getElementById('tabForm').style.display = 'block';
+document.getElementById('tabPreview').style.display = 'none';
+</script>
+</body>
+</html>
